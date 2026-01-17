@@ -93,7 +93,7 @@ export function Contact() {
               <div>
                 <p className="text-sm text-muted-foreground">Email</p>
                 <Link
-                  href="mailto:eduardo@ejemplo.com"
+                  href="mailto:eduardo.h.delafuente@outlook.com"
                   className="text-foreground hover:text-primary transition-colors font-medium"
                 >
                   eduardo@ejemplo.com
