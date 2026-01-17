@@ -9,7 +9,7 @@ const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: 'Eduardo de la Fuente | Tech Enthusiast & Educator',
-  description: 'Apasionado por la tecnologia, motivado a aprender y con ganas de guiar a otros en su viaje tecnologico.',
+  description: 'Apasionado por la tecnologia, motivado a aprender simpre y guiandos a otros en su viaje tecnologico.',
   generator: 'v0.app',
   icons: {
     icon: [
