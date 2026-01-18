@@ -11,7 +11,7 @@ const photos = [
     id: 2,
     src: "/photos/La_biblia_y_el_calefon.png",
     alt: "La biblia y el calefón",
-    caption: "La biblia y el calefón, Respiradero del 1900 con una c+amara de seguridad en medio del del caos de cables
+    caption: "La biblia y el calefón, Respiradero del 1900 con una cámara de seguridad,y caos de cables.
    },
 ];
 
