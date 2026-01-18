@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 const photos = [
-  {
+ {
     id: 1,
     src: "/photos/Farol_de_buenosaires.jpg",
     alt: "Farol de Buenos Aires",
@@ -11,7 +11,8 @@ const photos = [
     id: 2,
     src: "/photos/La_biblia_y_el_calefon.png",
     alt: "La biblia y el calefón",
-    caption: "Un clásico porteño capturado en imagen",
+    caption: "Impactante respiradero del 900 con actuales c+amaras de seguridad",
+    note: "Me recuerda que la tecnología debe acompañar sin imponerse.",
   },
 ];
 
