@@ -96,7 +96,7 @@ export function Contact() {
                   href="mailto:eduardo.h.delafuente@outlook.com"
                   className="text-foreground hover:text-primary transition-colors font-medium"
                 >
-                  eduardo@ejemplo.com
+                  eduardo.h.delafuente@outlook.com
                 </Link>
               </div>
             </div>
