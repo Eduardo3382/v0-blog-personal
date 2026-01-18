@@ -5,14 +5,14 @@ const photos = [
     id: 1,
     src: "/photos/Farol_de_buenosaires.jpg",
     alt: "Farol de Buenos Aires",
-    caption: "Farol histórico en una caminata por Buenos Aires",
+    caption: "Impactado por este Farol histórico y esa maravillosa cúpula de Buenos Aires",
   },
   {
     id: 2,
     src: "/photos/La_biblia_y_el_calefon.png",
     alt: "La biblia y el calefón",
-    caption: "Un clásico porteño capturado en imagen",
-  },
+    caption: "La biblia y el calefón, Respiradero del 1900 con una c+amara de seguridad en medio del del caos de cables
+   },
 ];
 
 export function Photos() {
