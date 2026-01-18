@@ -12,7 +12,7 @@ const photos = [
     src: "/photos/La_biblia_y_el_calefon.png",
     alt: "La biblia y el calefón",
     caption: "Impactante respiradero del 900 con cámaras de seguridad actuales",
-    note: "Me recuerda que la tecnología debe acompañar sin imponerse.",
+    note: "Lo viejo, lo nuevo, y el caos de cable, me recordó la estrofa la biblia y el calefón.",
   },
 ];
 
