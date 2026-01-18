@@ -51,8 +51,8 @@ export function Hero() {
           Tech Enthusiast
         </p>
         <p className="text-lg text-muted-foreground max-w-xl mb-8 leading-relaxed">
-          Apasionado por la tecnologia, motivado a aprender y con
-          ganas de con otros en su viaje tecnológico.
+          Apasionado por la tecnologia, motivado a aprender 
+          y compartiendo con otros en su viaje tecnológico.
         </p>
 
         <div className="flex flex-wrap gap-4 mb-12">
