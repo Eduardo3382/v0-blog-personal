@@ -48,11 +48,11 @@ export function Hero() {
           <span className="text-primary">de la Fuente</span>
         </h1>
         <p className="text-xl md:text-2xl text-muted-foreground mb-2 font-medium">
-          Tech Enthusiast & Educator
+          Tech Enthusiast
         </p>
         <p className="text-lg text-muted-foreground max-w-xl mb-8 leading-relaxed">
-          Apasionado por la tecnologia, motivado a aprender constantemente y con
-          ganas de guiar a otros en su viaje tecnologico.
+          Apasionado por la tecnologia, motivado a aprender y con
+          ganas de con otros en su viaje tecnológico.
         </p>
 
         <div className="flex flex-wrap gap-4 mb-12">
