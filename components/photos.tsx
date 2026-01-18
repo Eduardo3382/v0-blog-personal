@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 const photos = [
- {
+  {
     id: 1,
     src: "/photos/Farol_de_buenosaires.jpg",
     alt: "Farol de Buenos Aires",
@@ -11,7 +11,7 @@ const photos = [
     id: 2,
     src: "/photos/La_biblia_y_el_calefon.png",
     alt: "La biblia y el calefón",
-    caption: "Impactante respiradero del 900 con actuales c+amaras de seguridad",
+    caption: "Impactante respiradero del 900 con cámaras de seguridad actuales",
     note: "Me recuerda que la tecnología debe acompañar sin imponerse.",
   },
 ];
@@ -34,7 +34,7 @@ export function Photos() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {photos.map((photo) => (
-            <div key={photo.id} className="space-y-3">
+            <figure key={photo.id} className="space-y-3">
               <div className="aspect-square rounded-xl bg-card border border-border overflow-hidden relative">
                 <Image
                   src={photo.src}
@@ -44,10 +44,18 @@ export function Photos() {
                 />
               </div>
 
-              <p className="text-sm text-muted-foreground text-center">
-                {photo.caption}
-              </p>
-            </div>
+              <figcaption className="text-sm text-muted-foreground text-center space-y-1">
+                <strong className="block text-foreground">
+                  {photo.caption}
+                </strong>
+
+                {photo.note && (
+                  <span className="block">
+                    {photo.note}
+                  </span>
+                )}
+              </figcaption>
+            </figure>
           ))}
         </div>
       </div>
