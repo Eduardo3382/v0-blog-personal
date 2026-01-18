@@ -21,8 +21,8 @@ export function Photos() {
             Fotos
           </h2>
           <p className="text-muted-foreground max-w-2xl leading-relaxed">
-            Momentos capturados en eventos, talleres y actividades de la
-            comunidad tech.
+            Momentos capturados en eventos, talleres, actividades de la
+            vida diaria.
           </p>
         </div>
 
