@@ -25,3 +25,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Sistema / editor
+.DS_Store
+*.swp
+
+# Notas privadas / borradores que no se suben a GitHub
+edition-web/
