@@ -8,6 +8,8 @@ type Post = {
   date: string;
   slug: string;
   coverImage: string;
+  imageFit?: "cover" | "contain";
+  tags: string[];
 };
 
 export function LatestPost({ post }: { post: Post }) {
@@ -22,17 +24,17 @@ export function LatestPost({ post }: { post: Post }) {
 
         <Link
           href={`/blog/${post.slug}`}
-          className="group block mt-4 rounded-2xl border overflow-hidden hover:border-primary/50 transition"
+          className="group block mt-4 rounded-2xl border overflow-hidden hover:border-primary/50 transition bg-card"
         >
-          <div className="flex flex-col md:flex-row">
-            {/* Imagen */}
-            <div className="relative md:w-1/3 h-56 md:h-auto">
+          <div className="flex flex-col md:flex-row items-center">
+            {/* Imagen Miniatura */}
+            <div className="relative w-full md:w-64 h-64 bg-muted/20 flex-shrink-0">
               {post.coverImage && (
                 <Image
                   src={post.coverImage}
                   alt={post.title}
                   fill
-                  className="object-cover"
+                  className="object-contain p-4"
                   priority
                 />
               )}
@@ -44,7 +46,7 @@ export function LatestPost({ post }: { post: Post }) {
                 {post.date}
               </p>
 
-              <h3 className="text-2xl font-bold mb-3">
+              <h3 className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors">
                 {post.title}
               </h3>
 
@@ -52,8 +54,18 @@ export function LatestPost({ post }: { post: Post }) {
                 {post.excerpt}
               </p>
 
-              <span className="inline-flex items-center gap-2 text-primary font-medium">
-                Leer artículo <ArrowRight className="w-4 h-4" />
+              {post.tags.length > 0 && (
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {post.tags.map(tag => (
+                    <span key={tag} className="text-xs text-primary font-mono bg-primary/10 px-2 py-0.5 rounded-full">
+                      #{tag}
+                    </span>
+                  ))}
+                </div>
+              )}
+
+              <span className="inline-flex items-center gap-2 text-primary font-medium group-hover:underline">
+                Leer artículo <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </span>
             </div>
           </div>

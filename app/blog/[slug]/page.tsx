@@ -62,18 +62,29 @@ export default async function BlogPost({ params }: Props) {
                         {post.title}
                     </h1>
 
+                    <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-muted-foreground mb-6 pb-6 border-b">
+                        <span>{post.readingTime} min de lectura ({post.wordCount} palabras)</span>
+                        {post.tags.length > 0 && (
+                            <div className="flex flex-wrap gap-2">
+                                {post.tags.map(tag => (
+                                    <span key={tag} className="text-primary/80 font-medium">#{tag}</span>
+                                ))}
+                            </div>
+                        )}
+                    </div>
+
                     <p className="text-xl text-muted-foreground leading-relaxed">
                         {post.excerpt}
                     </p>
                 </header>
 
                 {post.coverImage && (
-                    <div className="relative w-full aspect-video rounded-2xl overflow-hidden mb-12 border">
+                    <div className="relative w-full h-[300px] md:h-[450px] rounded-2xl overflow-hidden mb-12 border bg-muted/20">
                         <Image
                             src={post.coverImage}
                             alt={post.title}
                             fill
-                            className="object-cover"
+                            className="object-contain"
                             priority
                         />
                     </div>
