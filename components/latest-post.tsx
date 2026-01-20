@@ -10,6 +10,7 @@ type Post = {
   coverImage: string;
   imageFit?: "cover" | "contain";
   tags: string[];
+  readingTime: number;
 };
 
 export function LatestPost({ post }: { post: Post }) {
@@ -43,7 +44,7 @@ export function LatestPost({ post }: { post: Post }) {
             {/* Texto */}
             <div className="flex-1 p-6 md:p-8">
               <p className="text-sm text-muted-foreground mb-2">
-                {post.date}
+                {post.date} • {post.readingTime} min de lectura
               </p>
 
               <h3 className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors">

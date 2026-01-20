@@ -4,6 +4,7 @@ date: "2026-01-20"
 excerpt: "La evolución corre tan rápido que mi mente apenas alcanza a seguirle el paso."
 slug: "2026-01-20_2026-01-20_A-donde-iremos-a-parar"
 coverImage: "/blog/2026-02-chatbotevolution/cover.png"
+tags: ["tecnologia", "agentes"]
 ---
 
 Hace más de tres años que curiosamente entré por primera vez a DALL·E y, con apenas una oración, le pedía que me dibujara o creara una imagen. Un mes despúes se liberaba al publico el prehistórico ChatGPT 3.5. No podía—no podíamos—salir de nuestro asombro. Era como si el futuro que había visto en Los Supersónicos hubiera llegado de repente, tocando mis manos.
