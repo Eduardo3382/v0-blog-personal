@@ -64,7 +64,7 @@ const socialLinks: SocialLink[] = [
     name: "Notion",
     href: "https://notion.so",
     icon: NotionIcon,
-    username: "Mi espacio de trabajo",
+    username: "https://www.notion.so/eduardoescritos/Pastillitas-de-tecnolog-a-2c96916a4f714d4f8e1a1ccf0f4f50cd",
   },
 ];
 
