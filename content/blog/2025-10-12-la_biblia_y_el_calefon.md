@@ -2,7 +2,7 @@
 title: "La Biblia y el calefón"
 date: "2025-10-12"
 excerpt: "Una escena cotidiana me atrapa y en 15 segundos escribo en mi mente lo antiguo y lo coidiano se cruzan sin avisar."
-slug: "la-biblia-y-el-calefon"
+slug: "la-biblia-y-el"
 coverImage: "/blog/2026-01-la_biblia_y_el_calefon/cover.png"
 ---
 
