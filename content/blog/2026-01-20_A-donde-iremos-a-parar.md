@@ -12,7 +12,7 @@ Aunque no podía responder sobre hechos recientes, ni acceder a la web, y a vece
 
 Justo cuando pensábamos que ya habíamos alcanzado un límite, llegaron los agentes: algunos tímidos, otros tan sofisticados y costosos que solo podía leer sobre ellos en boletines de tecnología.
 
-Ayer probé uno que se lanzó para programadores. En realidad, es para cualquiera: un agente programador. Y, de repente, sentí el mismo asombro que hace tres años. Revisó el código, encontró errores, planteó una estrategia para solucionarlo, generó un plan de trabajo, los corrigió, los testeo, lo implementó y lo guardó en el repositorio......, todo en menos de dos minutos.
+Ayer probé uno que se lanzó para programadores. En realidad, es para cualquiera: un agente que programa. Y, de repente, sentí el mismo asombro que hace tres años. Revisó el código, encontró errores, planteó una estrategia para solucionarlo, generó un plan de trabajo, los corrigió, los testeo, lo implementó y lo guardó en el repositorio......, todo en menos de dos minutos.
 
 En ese instante, me vino a la mente una estrofa de una canción folklórica: “🎵¿A dónde iremos a parar si ...?🎵”, 
 Si esto sigue, evolucionando a esta velocidad.¿que veremos en unos pocos meses? (Ya no me atrevo a preguntarme en unos pocos años.)
