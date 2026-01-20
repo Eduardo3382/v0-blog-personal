@@ -7,7 +7,7 @@ type Post = {
   excerpt: string;
   date: string;
   slug: string;
-  cover: string;
+  coverImage: string;
 };
 
 export function LatestPost({ post }: { post: Post }) {
@@ -27,16 +27,15 @@ export function LatestPost({ post }: { post: Post }) {
           <div className="flex flex-col md:flex-row">
             {/* Imagen */}
             <div className="relative md:w-1/3 h-56 md:h-auto">
-             {post.cover && (
- 		<Image
-    			src={post.cover}
-    			alt={post.title}
-    			fill
-    			className="object-cover"
-    			priority
-  	/>
-)}
-
+              {post.coverImage && (
+                <Image
+                  src={post.coverImage}
+                  alt={post.title}
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              )}
             </div>
 
             {/* Texto */}
@@ -63,4 +62,3 @@ export function LatestPost({ post }: { post: Post }) {
     </section>
   );
 }
-
