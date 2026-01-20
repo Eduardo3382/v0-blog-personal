@@ -1,6 +1,6 @@
 "use client";
 
-import { Github, Linkedin, Twitter, ChevronDown } from "lucide-react";
+import { Github, Linkedin, Twitter, ChevronDown, Instagram } from "lucide-react";
 import Link from "next/link";
 
 function MastodonIcon({ className }: { className?: string }) {
@@ -51,7 +51,7 @@ export function Hero() {
           Tech Enthusiast
         </p>
         <p className="text-lg text-muted-foreground max-w-xl mb-8 leading-relaxed">
-          Apasionado por la tecnologia, motivado a aprender 
+          Apasionado por la tecnologia, motivado a aprender
           y compartiendo con otros en su viaje tecnológico.
         </p>
 
@@ -89,12 +89,12 @@ export function Hero() {
             <MastodonIcon className="w-5 h-5 group-hover:scale-110 transition-transform" />
           </Link>
           <Link
-            href="https://notion.so"
+            href="https://www.instagram.com/edu_byte/"
             target="_blank"
             className="p-3 rounded-lg bg-secondary hover:bg-primary hover:text-primary-foreground transition-all duration-300 group"
-            aria-label="Notion"
+            aria-label="Instagram"
           >
-            <NotionIcon className="w-5 h-5 group-hover:scale-110 transition-transform" />
+            <Instagram className="w-5 h-5 group-hover:scale-110 transition-transform" />
           </Link>
         </div>
       </div>

@@ -1,4 +1,4 @@
-import { Github, Linkedin, Twitter, Mail } from "lucide-react";
+import { Github, Linkedin, Twitter, Mail, Instagram } from "lucide-react";
 import Link from "next/link";
 import type { ComponentType, SVGProps } from "react";
 
@@ -65,6 +65,12 @@ const socialLinks: SocialLink[] = [
     href: "https://notion.so",
     icon: NotionIcon,
     username: "https://www.notion.so/eduardoescritos/Pastillitas-de-tecnolog-a-2c96916a4f714d4f8e1a1ccf0f4f50cd",
+  },
+  {
+    name: "Instagram",
+    href: "https://www.instagram.com/edu_byte/",
+    icon: Instagram,
+    username: "@edu_byte",
   },
 ];
 
