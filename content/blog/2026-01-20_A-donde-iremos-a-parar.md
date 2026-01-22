@@ -2,7 +2,7 @@
 title: "A donde iremos a parar..."
 date: "2026-01-20"
 excerpt: "La evolución corre tan rápido que mi mente apenas alcanza a seguirle el paso."
-slug: "2026-01-20_2026-01-20_A-donde-iremos-a-parar"
+slug: "A-donde-iremos-a-parar"
 coverImage: "/blog/2026-02-chatbotevolution/cover.png"
 tags: ["tecnologia", "agentes"]
 ---
