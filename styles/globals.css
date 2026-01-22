@@ -115,11 +115,8 @@
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
-@layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
-  body {
-    @apply bg-background text-foreground;
+@layer utilities {
+  .glass-card {
+    @apply bg-card/60 backdrop-blur-md border border-white/10 dark:border-white/5;
   }
 }

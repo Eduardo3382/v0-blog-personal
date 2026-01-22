@@ -1,6 +1,7 @@
 import { Github, Linkedin, Twitter, Mail, Instagram } from "lucide-react";
 import Link from "next/link";
-import type { ComponentType, SVGProps } from "react";
+import type { ComponentType } from "react";
+import { siteConfig } from "@/lib/site-config";
 
 function MastodonIcon({ className }: { className?: string }) {
   return (
@@ -38,37 +39,37 @@ type SocialLink = {
 const socialLinks: SocialLink[] = [
   {
     name: "LinkedIn",
-    href: "https://linkedin.com",
+    href: siteConfig.links.linkedin,
     icon: Linkedin,
-    username: "https://www.linkedin.com/in/ededuardo-de-la-fuente/",
+    username: siteConfig.links.linkedin.split("/in/")[1] || "LinkedIn",
   },
   {
     name: "GitHub",
-    href: "https://github.com",
+    href: siteConfig.links.github,
     icon: Github,
-    username: "https://github.com/Eduardo3382",
+    username: siteConfig.links.github.split(".com/")[1] || "GitHub",
   },
   {
     name: "Twitter / X",
-    href: "https://twitter.com",
+    href: siteConfig.links.twitter,
     icon: Twitter,
     username: "@ehdela",
   },
   {
     name: "Mastodon",
-    href: "https://mastodon.social",
+    href: siteConfig.links.mastodon,
     icon: MastodonIcon,
     username: "@Eduardomastodon@mastodon.social",
   },
   {
     name: "Notion",
-    href: "https://notion.so",
+    href: siteConfig.links.notion,
     icon: NotionIcon,
-    username: "https://www.notion.so/eduardoescritos/Pastillitas-de-tecnolog-a-2c96916a4f714d4f8e1a1ccf0f4f50cd",
+    username: "Pastillitas de tecnología",
   },
   {
     name: "Instagram",
-    href: "https://www.instagram.com/edu_byte/",
+    href: siteConfig.links.instagram,
     icon: Instagram,
     username: "@edu_byte",
   },
@@ -99,10 +100,10 @@ export function Contact() {
               <div>
                 <p className="text-sm text-muted-foreground">Email</p>
                 <Link
-                  href="mailto:eduardo.h.delafuente@outlook.com"
+                  href={`mailto:${siteConfig.email}`}
                   className="text-foreground hover:text-primary transition-colors font-medium"
                 >
-                  eduardo.h.delafuente@outlook.com
+                  {siteConfig.email}
                 </Link>
               </div>
             </div>

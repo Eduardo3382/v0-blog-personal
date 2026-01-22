@@ -2,6 +2,8 @@
 
 import { Github, Linkedin, Twitter, ChevronDown, Instagram } from "lucide-react";
 import Link from "next/link";
+import { siteConfig } from "@/lib/site-config";
+import { MotionWrapper } from "./motion-wrapper";
 
 function MastodonIcon({ className }: { className?: string }) {
   return (
@@ -35,68 +37,77 @@ export function Hero() {
   };
 
   return (
-    <section className="min-h-screen flex flex-col justify-center relative px-6 md:px-12 lg:px-24">
-      <div className="max-w-4xl">
-        <div className="mb-6">
-          <span className="text-primary font-mono text-sm tracking-wider">
-            Hola, soy
-          </span>
-        </div>
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-foreground mb-4 tracking-tight">
-          Eduardo
-          <br />
-          <span className="text-primary">de la Fuente</span>
-        </h1>
-        <p className="text-xl md:text-2xl text-muted-foreground mb-2 font-medium">
-          Tech Enthusiast
-        </p>
-        <p className="text-lg text-muted-foreground max-w-xl mb-8 leading-relaxed">
-          Apasionado por la tecnologia, motivado a aprender
-          y compartiendo con otros en su viaje tecnológico.
-        </p>
+    <section className="min-h-screen flex flex-col justify-center relative px-6 md:px-12 lg:px-24 overflow-hidden">
+      <div className="max-w-4xl relative z-10">
+        <MotionWrapper delay={0.1}>
+          <div className="mb-6">
+            <span className="text-primary font-mono text-sm tracking-wider">
+              Hola, soy
+            </span>
+          </div>
+        </MotionWrapper>
 
-        <div className="flex flex-wrap gap-4 mb-12">
-          <Link
-            href="https://linkedin.com"
-            target="_blank"
-            className="p-3 rounded-lg bg-secondary hover:bg-primary hover:text-primary-foreground transition-all duration-300 group"
-            aria-label="LinkedIn"
-          >
-            <Linkedin className="w-5 h-5 group-hover:scale-110 transition-transform" />
-          </Link>
-          <Link
-            href="https://github.com"
-            target="_blank"
-            className="p-3 rounded-lg bg-secondary hover:bg-primary hover:text-primary-foreground transition-all duration-300 group"
-            aria-label="GitHub"
-          >
-            <Github className="w-5 h-5 group-hover:scale-110 transition-transform" />
-          </Link>
-          <Link
-            href="https://twitter.com"
-            target="_blank"
-            className="p-3 rounded-lg bg-secondary hover:bg-primary hover:text-primary-foreground transition-all duration-300 group"
-            aria-label="Twitter"
-          >
-            <Twitter className="w-5 h-5 group-hover:scale-110 transition-transform" />
-          </Link>
-          <Link
-            href="https://mastodon.social"
-            target="_blank"
-            className="p-3 rounded-lg bg-secondary hover:bg-primary hover:text-primary-foreground transition-all duration-300 group"
-            aria-label="Mastodon"
-          >
-            <MastodonIcon className="w-5 h-5 group-hover:scale-110 transition-transform" />
-          </Link>
-          <Link
-            href="https://www.instagram.com/edu_byte/"
-            target="_blank"
-            className="p-3 rounded-lg bg-secondary hover:bg-primary hover:text-primary-foreground transition-all duration-300 group"
-            aria-label="Instagram"
-          >
-            <Instagram className="w-5 h-5 group-hover:scale-110 transition-transform" />
-          </Link>
-        </div>
+        <MotionWrapper delay={0.2}>
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-foreground mb-4 tracking-tight">
+            {siteConfig.name.split(" ")[0]}
+            <br />
+            <span className="text-primary">{siteConfig.name.split(" ").slice(1).join(" ")}</span>
+          </h1>
+        </MotionWrapper>
+
+        <MotionWrapper delay={0.3}>
+          <p className="text-xl md:text-2xl text-muted-foreground mb-2 font-medium">
+            Tech Enthusiast
+          </p>
+          <p className="text-lg text-muted-foreground max-w-xl mb-8 leading-relaxed">
+            {siteConfig.description}
+          </p>
+        </MotionWrapper>
+
+        <MotionWrapper delay={0.4}>
+          <div className="flex flex-wrap gap-4 mb-12">
+            <Link
+              href={siteConfig.links.linkedin}
+              target="_blank"
+              className="p-3 rounded-lg bg-secondary hover:bg-primary hover:text-primary-foreground transition-all duration-300 group"
+              aria-label="LinkedIn"
+            >
+              <Linkedin className="w-5 h-5 group-hover:scale-110 transition-transform" />
+            </Link>
+            <Link
+              href={siteConfig.links.github}
+              target="_blank"
+              className="p-3 rounded-lg bg-secondary hover:bg-primary hover:text-primary-foreground transition-all duration-300 group"
+              aria-label="GitHub"
+            >
+              <Github className="w-5 h-5 group-hover:scale-110 transition-transform" />
+            </Link>
+            <Link
+              href={siteConfig.links.twitter}
+              target="_blank"
+              className="p-3 rounded-lg bg-secondary hover:bg-primary hover:text-primary-foreground transition-all duration-300 group"
+              aria-label="Twitter"
+            >
+              <Twitter className="w-5 h-5 group-hover:scale-110 transition-transform" />
+            </Link>
+            <Link
+              href={siteConfig.links.mastodon}
+              target="_blank"
+              className="p-3 rounded-lg bg-secondary hover:bg-primary hover:text-primary-foreground transition-all duration-300 group"
+              aria-label="Mastodon"
+            >
+              <MastodonIcon className="w-5 h-5 group-hover:scale-110 transition-transform" />
+            </Link>
+            <Link
+              href={siteConfig.links.instagram}
+              target="_blank"
+              className="p-3 rounded-lg bg-secondary hover:bg-primary hover:text-primary-foreground transition-all duration-300 group"
+              aria-label="Instagram"
+            >
+              <Instagram className="w-5 h-5 group-hover:scale-110 transition-transform" />
+            </Link>
+          </div>
+        </MotionWrapper>
       </div>
 
       <button

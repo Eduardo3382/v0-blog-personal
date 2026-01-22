@@ -9,8 +9,16 @@ const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: 'Eduardo de la Fuente | Tech Enthusiast & Educator',
-  description: 'Apasionado por la tecnologia, motivado a aprender simpre y guiandos a otros en su viaje tecnologico.',
+  description: 'Apasionado por la tecnología, motivado a aprender siempre y guiando a otros en su viaje tecnológico.',
   generator: 'v0.app',
+  openGraph: {
+    title: 'Eduardo de la Fuente | Tech Enthusiast & Educator',
+    description: 'Apasionado por la tecnología, motivado a aprender siempre y guiando a otros en su viaje tecnológico.',
+    url: 'https://eduardoescritos.com', // Update this if you have a custom domain
+    siteName: 'Eduardo de la Fuente',
+    locale: 'es_ES',
+    type: 'website',
+  },
   icons: {
     icon: [
       {
@@ -36,7 +44,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="es">
       <body className={`font-sans antialiased`}>
         {children}
         <Analytics />

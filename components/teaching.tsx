@@ -1,5 +1,6 @@
 import { BookOpen, Users, Video, FileText, Mail, ArrowUpRight, MapPin } from "lucide-react";
 import Link from "next/link";
+import { MotionWrapper } from "./motion-wrapper";
 
 const teachingItems = [
   {
@@ -47,21 +48,23 @@ export function Teaching() {
   return (
     <section id="ensenanza" className="py-24 px-6 md:px-12 lg:px-24 bg-card/50">
       <div className="max-w-6xl mx-auto">
-        <div className="mb-12">
-          <span className="text-primary font-mono text-sm tracking-wider">
-            Educación
-          </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2 mb-4">
-            Enseñanza
-          </h2>
-          <p className="text-muted-foreground max-w-2xl leading-relaxed">
-            Mi misión es hacer la tecnología accesible para todos. Aquí
-            encontrarás diferentes formas en las que puedo ayudarte a aprender.
-          </p>
-        </div>
+        <MotionWrapper>
+          <div className="mb-12">
+            <span className="text-primary font-mono text-sm tracking-wider">
+              Educación
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2 mb-4">
+              Enseñanza
+            </h2>
+            <p className="text-muted-foreground max-w-2xl leading-relaxed">
+              Mi misión es hacer la tecnología accesible para todos. Aquí
+              encontrarás diferentes formas en las que puedo ayudarte a aprender.
+            </p>
+          </div>
+        </MotionWrapper>
 
         <div className="grid md:grid-cols-2 gap-6">
-          {teachingItems.map((item) => {
+          {teachingItems.map((item, index) => {
             const Content = (
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 rounded-lg bg-secondary flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
@@ -89,22 +92,25 @@ export function Teaching() {
             );
 
             const containerClassName =
-              "group p-6 rounded-xl bg-card border border-border hover:border-primary/50 transition-all duration-300 block h-full";
+              "group p-6 rounded-xl glass-card border border-border hover:border-primary/50 transition-all duration-300 block h-full";
 
-            return item.href ? (
-              <Link
-                key={item.title}
-                href={item.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={containerClassName}
-              >
-                {Content}
-              </Link>
-            ) : (
-              <div key={item.title} className={containerClassName}>
-                {Content}
-              </div>
+            return (
+              <MotionWrapper key={item.title} delay={index * 0.1}>
+                {item.href ? (
+                  <Link
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={containerClassName}
+                  >
+                    {Content}
+                  </Link>
+                ) : (
+                  <div className={containerClassName}>
+                    {Content}
+                  </div>
+                )}
+              </MotionWrapper>
             );
           })}
         </div>
