@@ -1,0 +1,106 @@
+import fs from 'fs';
+import path from 'path';
+import exifr from 'exifr';
+
+const PHOTOS_DIR = './public/photos';
+const OUTPUT_FILE = './lib/photos.ts';
+
+async function generatePhotos() {
+    console.log('📷 Generando lista de fotos desde metadatos...');
+
+    try {
+        const files = fs.readdirSync(PHOTOS_DIR)
+            .filter(file => /\.(jpe?g|png|webp)$/i.test(file));
+
+        const photoData = [];
+
+        for (const [index, file] of files.entries()) {
+            const filePath = path.join(PHOTOS_DIR, file);
+            const fileNameNoExt = path.parse(file).name.replace(/_/g, ' ');
+
+            let metadata = {};
+            try {
+                // Leemos metadatos básicos y extendidos
+                metadata = await exifr.parse(filePath, {
+                    iptc: true,
+                    xmp: true,
+                    exif: true,
+                }) || {};
+            } catch (err) {
+                console.warn(`⚠️ No se pudieron leer metadatos de ${file}: ${err.message}`);
+            }
+
+            // Helper para obtener texto de objetos de metadatos (ej: { value: "..." } o { lang: "...", value: "..." })
+            const getText = (val) => {
+                if (!val) return "";
+                if (typeof val === 'string') return val;
+                if (typeof val === 'object') return val.value || val[Object.keys(val)[0]] || "";
+                return String(val);
+            };
+
+            // 1. Título (Title): ObjectName (IPTC), Headline (XMP) o Title (XMP). Fallback: Nombre del archivo.
+            const title = getText(metadata.ObjectName || metadata.Headline || metadata.title || metadata.Title) || fileNameNoExt;
+
+            // 2. Descripción (Description): ImageDescription (EXIF), Caption (IPTC), UserComment (EXIF) o Description (XMP). Fallback: "".
+            const description = getText(metadata.ImageDescription || metadata.Caption || metadata.UserComment || metadata.description || metadata.Description);
+
+            // 3. Fecha (Date): CreateDate o DateTimeOriginal. Fallback: Warning.
+            let date = "";
+            if (metadata.CreateDate || metadata.DateTimeOriginal) {
+                const d = new Date(metadata.CreateDate || metadata.DateTimeOriginal);
+                date = d.toISOString().split('T')[0];
+            } else {
+                console.warn(`⚠️ Advertencia: ${file} no tiene fecha de captura en metadatos.`);
+            }
+
+            // 4. Tags: Keywords (IPTC) o Subject (XMP). Fallback: [].
+            let tags = [];
+            if (metadata.Keywords) {
+                tags = Array.isArray(metadata.Keywords) ? metadata.Keywords : [metadata.Keywords];
+            } else if (metadata.Subject) {
+                tags = Array.isArray(metadata.Subject) ? metadata.Subject : [metadata.Subject];
+            }
+
+            photoData.push({
+                id: index + 1,
+                src: `/photos/${file}`,
+                alt: title,
+                caption: title,
+                note: description,
+                date: date,
+                tags: tags
+            });
+        }
+
+        // Ordenar por fecha (más recientes primero)
+        photoData.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
+        // Reasignar IDs después de ordenar
+        photoData.forEach((photo, i) => photo.id = i + 1);
+
+        const content = `// ESTE ARCHIVO ES GENERADO AUTOMÁTICAMENTE. NO EDITAR MANUALMENTE.
+// Corre 'npm run generate-photos' para actualizarlo.
+
+export type Photo = {
+    id: number;
+    src: string;
+    alt: string;
+    caption: string;
+    note?: string;
+    date: string;
+    tags?: string[];
+};
+
+export const photos: Photo[] = ${JSON.stringify(photoData, null, 4)};
+`;
+
+        fs.writeFileSync(OUTPUT_FILE, content);
+        console.log(`✅ ¡Éxito! Se procesaron ${photoData.length} fotos y se actualizó ${OUTPUT_FILE}`);
+
+    } catch (error) {
+        console.error('❌ Error fatal al generar fotos:', error);
+        process.exit(1);
+    }
+}
+
+generatePhotos();

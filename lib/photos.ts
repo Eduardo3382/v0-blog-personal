@@ -1,3 +1,6 @@
+// ESTE ARCHIVO ES GENERADO AUTOMÁTICAMENTE. NO EDITAR MANUALMENTE.
+// Corre 'npm run generate-photos' para actualizarlo.
+
 export type Photo = {
     id: number;
     src: string;
@@ -5,43 +8,55 @@ export type Photo = {
     caption: string;
     note?: string;
     date: string;
+    tags?: string[];
 };
 
 export const photos: Photo[] = [
     {
-        id: 1,
-        src: "/photos/Farol_de_buenosaires.jpg",
-        alt: "Farol de Buenos Aires",
-        caption: "Farol capturada en una caminata por Buenos Aires",
-        date: "2024-05-15",
+        "id": 1,
+        "src": "/photos/IMG_7499.JPEG",
+        "alt": "Atardecer en el desierto",
+        "caption": "Atardecer en el desierto",
+        "note": "Junto a miles de personas en el desierto para capturar el atardecer en atacama.",
+        "date": "2025-10-18",
+        "tags": [
+            "#Chile #Atacama #Viaje"
+        ]
     },
     {
-        id: 2,
-        src: "/photos/La_biblia_y_el_calefon.png",
-        alt: "La biblia y el calefón",
-        caption: "Impactante respiradero del 900, junto a una cámaras de seguridad",
-        note: "Lo viejo, lo nuevo, y el caos de cable, me recordó la estrofa la biblia y el calefón.",
-        date: "2024-06-10",
+        "id": 2,
+        "src": "/photos/IMG_7500.JPEG",
+        "alt": "IMG 7500",
+        "caption": "IMG 7500",
+        "note": "Amanecer en el desierto",
+        "date": "2025-10-18",
+        "tags": []
     },
     {
-        id: 3,
-        src: "/photos/IMG_5706.jpeg",
-        alt: "Momento capturado",
-        caption: "Escenas capturada en un semáforo",
-        date: "2024-07-20",
+        "id": 3,
+        "src": "/photos/La_biblia_y_el_calefon.png",
+        "alt": "La biblia y el calefon",
+        "caption": "La biblia y el calefon",
+        "note": "",
+        "date": "2025-07-12",
+        "tags": []
     },
     {
-        id: 4,
-        src: "/photos/IMG_7499.JPEG",
-        alt: "Taller o evento",
-        caption: "Atardeecer en el desierto",
-        date: "2024-08-05",
+        "id": 4,
+        "src": "/photos/Farol_de_buenosaires.jpg",
+        "alt": "Farol de buenosaires",
+        "caption": "Farol de buenosaires",
+        "note": "",
+        "date": "2025-05-12",
+        "tags": []
     },
     {
-        id: 5,
-        src: "/photos/IMG_7500.JPEG",
-        alt: "Escena nocturna",
-        caption: "Amanecer en el desierto",
-        date: "2024-09-12",
-    },
+        "id": 5,
+        "src": "/photos/IMG_5706.jpeg",
+        "alt": "IMG 5706",
+        "caption": "IMG 5706",
+        "note": "",
+        "date": "2024-03-09",
+        "tags": []
+    }
 ];

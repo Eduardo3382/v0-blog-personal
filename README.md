@@ -28,3 +28,11 @@ Continue building your app on:
 2. Deploy your chats from the v0 interface
 3. Changes are automatically pushed to this repository
 4. Vercel deploys the latest version from this repository
+
+## Documentación y Guías
+
+Para ayudarte con la gestión de tu blog, he organizado toda la información en la carpeta [documentacion](./documentacion):
+
+- **[Guía de Workshops](./documentacion/GUIA_WORKSHOPS.md)**: Instrucciones detalladas para agregar nuevos eventos y gestionar inscripciones.
+- **[Guía de Fotos](./documentacion/guia_act_photo.md)**: Cómo actualizar la galería y procesar imágenes.
+- **[Recursos de Edición](./documentacion/edition-web)**: Una colección de guías sobre Git, edición local, dominios y más.

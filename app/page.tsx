@@ -9,11 +9,14 @@ import { Contact } from "@/components/contact";
 import { Footer } from "@/components/footer";
 
 import { getAllPosts } from "@/lib/blog";
+import { getUpcomingWorkshop } from "@/lib/workshops";
+import { UpcomingWorkshop } from "@/components/upcoming-workshop";
 
 export default function Home() {
   const posts = getAllPosts();
   const latestPost = posts[0];
   const otherPosts = posts.slice(1, 4);
+  const upcomingWorkshop = getUpcomingWorkshop();
 
   return (
     <main className="min-h-screen bg-background">
@@ -21,6 +24,8 @@ export default function Home() {
       <Hero />
 
       {latestPost && <LatestPost post={latestPost} />}
+
+      {upcomingWorkshop && <UpcomingWorkshop workshop={upcomingWorkshop} />}
 
       <About />
 

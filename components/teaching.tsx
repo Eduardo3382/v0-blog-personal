@@ -32,6 +32,8 @@ const teachingItems = [
     title: "Workshops",
     description:
       "Talleres practicos donde aprendemos construyendo proyectos reales.",
+    href: "/workshops/past",
+    linkText: "Ver workshops pasados",
   },
   {
     icon: FileText,
@@ -79,7 +81,7 @@ export function Teaching() {
                   </p>
                   {item.href && (
                     <span className="text-sm font-medium text-primary inline-flex items-center gap-1 group-hover:underline">
-                      Ver boletines
+                      {item.linkText || "Ver más"}
                     </span>
                   )}
                 </div>
