@@ -6,10 +6,10 @@ import Link from "next/link";
 
 const navLinks = [
   { name: "Inicio", href: "#" },
-  { name: "Sobre Mi", href: "#about" },
+  { name: "Sobre Mí", href: "#about" },
   { name: "Blog", href: "#blog" },
   { name: "Fotos", href: "#fotos" },
-  { name: "Ensenanza", href: "#ensenanza" },
+  { name: "Enseñanza", href: "#ensenanza" },
   { name: "Contacto", href: "#contact" },
 ];
 
@@ -27,11 +27,10 @@ export function Navigation() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
           ? "bg-background/80 backdrop-blur-lg border-b border-border"
           : "bg-transparent"
-      }`}
+        }`}
     >
       <nav className="max-w-6xl mx-auto px-6 md:px-12 py-4 flex items-center justify-between">
         <Link
