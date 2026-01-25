@@ -11,6 +11,10 @@ export const metadata: Metadata = {
   title: 'Eduardo de la Fuente | Tech Enthusiast & Educator',
   description: 'Apasionado por la tecnología, motivado a aprender siempre y guiando a otros en su viaje tecnológico.',
   generator: 'v0.app',
+  metadataBase: new URL('https://eduardo.net.ar'),
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
     title: 'Eduardo de la Fuente | Tech Enthusiast & Educator',
     description: 'Apasionado por la tecnología, motivado a aprender siempre y guiando a otros en su viaje tecnológico.',
