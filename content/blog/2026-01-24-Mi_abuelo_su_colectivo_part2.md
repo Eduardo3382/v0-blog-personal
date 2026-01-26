@@ -2,8 +2,8 @@
 title: "Mi abuelo y su colectivo parte 2."
 date: "2026-01-25"
 excerpt: "La historia que se repite abuelo-nieto y tranvia-colectivo."
-slug: "Mi_abuelo_su_colectivo 2"
-coverImage: "/blog/2026-04-Mi_abuelo_su_colectivo2/cover.jpeg"
+slug: "Mi_abuelo_su_colectivo_2"
+coverImage: "/blog/2026-01-24-mi-abuelo-su-colectivo-p2/cover.jpg"
 tags: ["transporte", "memorias", "familia"]
 ---
 
