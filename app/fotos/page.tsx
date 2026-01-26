@@ -50,9 +50,6 @@ export default function GalleryPage() {
                                         <strong className="text-lg font-semibold leading-tight text-foreground group-hover:text-primary transition-colors">
                                             {photo.caption}
                                         </strong>
-                                        <span className="text-xs text-muted-foreground font-mono whitespace-nowrap pt-1">
-                                            {photo.date}
-                                        </span>
                                     </div>
 
                                     {photo.note && (
