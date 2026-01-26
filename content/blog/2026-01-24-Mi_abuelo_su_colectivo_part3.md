@@ -27,6 +27,6 @@ Ahí aparece otra pregunta incómoda.
 ¿Era inevitable la expropiación para ordenar el transporte? ¿O la corporacion no queria negociar? O si era una alternativa, ¿la resistencia cerró toda posibilidad de regulación intermedia?
 Las segunda huelgas duró casi 3 meses. Hubo incautaciones, negociaciones, acuerdos provisorios. Algunas líneas pasaron al Estado. Otras sobrevivieron bajo condiciones nuevas. Algunas desaparecieron o se escondieron operando fuera de la capital. El conflicto no dejó ganadores claros, solo un sistema distinto.
 
-Mientras el tranvía avanza, mi nieto mira por la ventana. Yo pienso que esta escena ya ocurrió antes: un abuelo, un nieto y una ciudad que se reorganiza sin pedir permiso. Cambian los vehículos, cambian los discursos, pero la tensión es la misma: cómo se regula sin arrasar, como se regula sin sacar provecho, cómo se resiste sin quedar afuera.
+Mientras el tranvía avanza, mi nieto mira por la ventana. Yo pienso que esta escena ya ocurrió antes: un abuelo, un nieto y una ciudad que se reorganiza sin pedir permiso. Cambian los vehículos, cambian los discursos, pero la tensión es la misma: ¿cómo se regula sin arrasar?, ¿como se regula sin sacar provecho?, ¿Cómo se negocia o se pide sin quedar afuera?. ¿Como se deja a los particulares hacer negocios con la minimas reglas para que pueda crecer en orden?
 
 Que historia esta, como seguirá lo sabremos en la proxima parada?
