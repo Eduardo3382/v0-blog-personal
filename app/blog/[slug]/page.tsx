@@ -1,6 +1,11 @@
 import { Metadata } from "next";
+import { notFound } from "next/navigation";
+import Image from "next/image";
+import Link from "next/link";
+import { Calendar, ArrowLeft } from "lucide-react";
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
+import { getPostBySlug, getAllPosts } from "@/lib/blog";
 
 type Props = {
     params: Promise<{ slug: string }>;
@@ -120,7 +125,8 @@ export default async function BlogPost({ params }: Props) {
                         </pre>
                     </div>
                 </div>
-                <Footer />
+            </div>
+            <Footer />
         </article>
     );
 }
