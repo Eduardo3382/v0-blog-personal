@@ -1,9 +1,6 @@
-import { getPostBySlug, getAllPosts } from "@/lib/blog";
-import { notFound } from "next/navigation";
-import Image from "next/image";
-import { ArrowLeft, Calendar } from "lucide-react";
-import Link from "next/link";
 import { Metadata } from "next";
+import { Navigation } from "@/components/navigation";
+import { Footer } from "@/components/footer";
 
 type Props = {
     params: Promise<{ slug: string }>;
@@ -63,64 +60,67 @@ export default async function BlogPost({ params }: Props) {
     }
 
     return (
-        <article className="min-h-screen bg-background pt-24 pb-12 px-6 md:px-12 lg:px-24">
-            <div className="max-w-3xl mx-auto">
-                <Link
-                    href="/#blog"
-                    className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary mb-8 transition"
-                >
-                    <ArrowLeft className="w-4 h-4" />
-                    Volver al blog
-                </Link>
+        <article className="min-h-screen bg-background">
+            <Navigation />
+            <div className="pt-24 pb-12 px-6 md:px-12 lg:px-24">
+                <div className="max-w-3xl mx-auto">
+                    <Link
+                        href="/#blog"
+                        className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary mb-8 transition"
+                    >
+                        <ArrowLeft className="w-4 h-4" />
+                        Ir a artículos anteriores
+                    </Link>
 
-                <header className="mb-12">
-                    <div className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
-                        <Calendar className="w-4 h-4" />
-                        <time>{post.date}</time>
-                    </div>
+                    <header className="mb-12">
+                        <div className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
+                            <Calendar className="w-4 h-4" />
+                            <time>{post.date}</time>
+                        </div>
 
-                    <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-                        {post.title}
-                    </h1>
+                        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+                            {post.title}
+                        </h1>
 
-                    <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-muted-foreground mb-6 pb-6 border-b">
-                        <span>{post.readingTime} min de lectura ({post.wordCount} palabras)</span>
-                        {post.tags.length > 0 && (
-                            <div className="flex flex-wrap gap-2">
-                                {post.tags.map(tag => (
-                                    <span key={tag} className="text-primary/80 font-medium">#{tag}</span>
-                                ))}
-                            </div>
-                        )}
-                    </div>
+                        <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-muted-foreground mb-6 pb-6 border-b">
+                            <span>{post.readingTime} min de lectura ({post.wordCount} palabras)</span>
+                            {post.tags.length > 0 && (
+                                <div className="flex flex-wrap gap-2">
+                                    {post.tags.map(tag => (
+                                        <span key={tag} className="text-primary/80 font-medium">#{tag}</span>
+                                    ))}
+                                </div>
+                            )}
+                        </div>
 
-                    <p className="text-xl text-muted-foreground leading-relaxed">
-                        {post.excerpt}
-                    </p>
-                </header>
+                        <p className="text-xl text-muted-foreground leading-relaxed">
+                            {post.excerpt}
+                        </p>
+                    </header>
 
-                {post.coverImage && (
-                    <div className="relative w-full h-[300px] md:h-[450px] rounded-2xl overflow-hidden mb-12 border bg-muted/20">
-                        <Image
-                            src={post.coverImage}
-                            alt={post.title}
-                            fill
-                            className="object-contain"
-                            priority
-                        />
-                    </div>
-                )}
+                    {post.coverImage && (
+                        <div className="relative w-full h-[300px] md:h-[450px] rounded-2xl overflow-hidden mb-12 border bg-muted/20">
+                            <Image
+                                src={post.coverImage}
+                                alt={post.title}
+                                fill
+                                className="object-contain"
+                                priority
+                            />
+                        </div>
+                    )}
 
-                {/* 
+                    {/* 
             TODO: Add markdown renderer here
             For now, we are rendering raw content 
         */}
-                <div className="prose prose-neutral dark:prose-invert max-w-none">
-                    <pre className="whitespace-pre-wrap font-sans">
-                        {post.content}
-                    </pre>
+                    <div className="prose prose-neutral dark:prose-invert max-w-none">
+                        <pre className="whitespace-pre-wrap font-sans">
+                            {post.content}
+                        </pre>
+                    </div>
                 </div>
-            </div>
+                <Footer />
         </article>
     );
 }
