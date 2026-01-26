@@ -11,9 +11,11 @@ import { Lightbox } from "./lightbox";
 export function Photos() {
   const [selectedPhoto, setSelectedPhoto] = useState<typeof photos[0] | null>(null);
 
-  const latestPhotos = [...photos].sort((a, b) =>
-    new Date(b.date).getTime() - new Date(a.date).getTime()
-  ).slice(0, 4);
+  const latestPhotos = [...photos].sort((a, b) => {
+    const dateA = new Date(a.sortDate || a.date).getTime();
+    const dateB = new Date(b.sortDate || b.date).getTime();
+    return dateB - dateA;
+  }).slice(0, 4);
 
   return (
     <section id="fotos" className="py-24 px-6 md:px-12 lg:px-24">

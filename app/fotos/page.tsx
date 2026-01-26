@@ -6,9 +6,11 @@ import { ChevronLeft, Expand } from "lucide-react";
 import { photos } from "@/lib/photos";
 
 export default function GalleryPage() {
-    const sortedPhotos = [...photos].sort((a, b) =>
-        new Date(b.date).getTime() - new Date(a.date).getTime()
-    );
+    const sortedPhotos = [...photos].sort((a, b) => {
+        const dateA = new Date(a.sortDate || a.date).getTime();
+        const dateB = new Date(b.sortDate || b.date).getTime();
+        return dateB - dateA;
+    });
 
     return (
         <main className="min-h-screen bg-background">

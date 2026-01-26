@@ -1,12 +1,12 @@
 import fs from 'fs';
 import path from 'path';
-import { execSync } from 'child_process';
+import exifr from 'exifr';
 
 const PHOTOS_DIR = './public/photos';
 const OUTPUT_FILE = './lib/photos.ts';
 
 async function generatePhotos() {
-    console.log('📷 Generando lista de fotos desde exiftool...');
+    console.log('📷 Generando lista de fotos con exifr (XMP DateCreated)...');
 
     try {
         const files = fs.readdirSync(PHOTOS_DIR)
@@ -16,45 +16,55 @@ async function generatePhotos() {
 
         for (const [index, file] of files.entries()) {
             const filePath = path.join(PHOTOS_DIR, file);
+            const fileNameNoExt = path.parse(file).name.replace(/_/g, ' ');
 
             let metadata = {};
             try {
-                // Usamos exiftool directamente para máxima compatibilidad con el script de bash
-                const output = execSync(`exiftool -j -s -ObjectName -Headline -Title -ImageDescription -Caption-Abstract -Description -DateTimeOriginal -CreateDate -DateCreated -Keywords -Subject "${filePath}"`).toString();
-                metadata = JSON.parse(output)[0] || {};
+                metadata = await exifr.parse(filePath, {
+                    iptc: true,
+                    xmp: true,
+                    exif: true,
+                }) || {};
             } catch (err) {
-                console.warn(`⚠️ No se pudieron leer metadatos de ${file} usando exiftool: ${err.message}`);
-                continue;
+                console.warn(`⚠️ No se pudieron leer metadatos de ${file}: ${err.message}`);
             }
 
-            // 1. Título
-            const title = metadata.ObjectName || metadata.Headline || metadata.Title || path.parse(file).name.replace(/_/g, ' ');
-
-            // 2. Descripción
-            const description = metadata.ImageDescription || metadata.CaptionAbstract || metadata.Description || "";
-
-            // 3. Fechas
-            const rawDate = metadata.DateTimeOriginal || metadata.CreateDate || "";
-            const rawSortDate = metadata.DateCreated || "";
-
-            const formatDate = (raw) => {
-                if (!raw) return "";
-                // Convertir YYYY:MM:DD ... a YYYY-MM-DD
-                return raw.split(' ')[0].replace(/:/g, '-');
+            const getText = (val) => {
+                if (!val) return "";
+                if (typeof val === 'string') return val;
+                if (typeof val === 'object') return val.value || val[Object.keys(val)[0]] || "";
+                return String(val);
             };
 
-            const date = formatDate(rawDate);
-            const sortDate = formatDate(rawSortDate);
+            // 1. Título
+            const title = getText(metadata.ObjectName || metadata.Headline || metadata.title || metadata.Title) || fileNameNoExt;
 
-            if (!date) {
+            // 2. Descripción  
+            const description = getText(metadata.ImageDescription || metadata.Caption || metadata.UserComment || metadata.description || metadata.Description);
+
+            // 3. Fechas
+            let date = "";
+            let sortDate = "";
+
+            if (metadata.CreateDate || metadata.DateTimeOriginal) {
+                const d = new Date(metadata.CreateDate || metadata.DateTimeOriginal);
+                date = d.toISOString().split('T')[0];
+            } else {
                 console.warn(`⚠️ Advertencia: ${file} no tiene fecha de captura.`);
+            }
+
+            // XMP DateCreated - exifr lo lee como "DateCreated" directamente
+            if (metadata.DateCreated) {
+                const sd = new Date(metadata.DateCreated);
+                sortDate = sd.toISOString().split('T')[0];
             }
 
             // 4. Tags
             let tags = [];
-            const rawTags = metadata.Keywords || metadata.Subject || "";
-            if (rawTags) {
-                tags = Array.isArray(rawTags) ? rawTags : [rawTags];
+            if (metadata.Keywords) {
+                tags = Array.isArray(metadata.Keywords) ? metadata.Keywords : [metadata.Keywords];
+            } else if (metadata.Subject) {
+                tags = Array.isArray(metadata.Subject) ? metadata.Subject : [metadata.Subject];
             }
 
             photoData.push({
@@ -69,11 +79,11 @@ async function generatePhotos() {
             });
         }
 
-        // Ordenar: Prioridad a sortDate, luego a date.
+        // Ordenar: Prioridad a sortDate, luego a date
         photoData.sort((a, b) => {
             const dateA = new Date(a.sortDate || a.date).getTime();
-            const bDate = new Date(b.sortDate || b.date).getTime();
-            return bDate - dateA;
+            const dateB = new Date(b.sortDate || b.date).getTime();
+            return dateB - dateA;
         });
 
         // Reasignar IDs después de ordenar
