@@ -6,6 +6,9 @@ import { Calendar, ArrowLeft } from "lucide-react";
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 import { getPostBySlug, getAllPosts } from "@/lib/blog";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+import remarkBreaks from "remark-breaks";
 
 type Props = {
     params: Promise<{ slug: string }>;
@@ -115,14 +118,10 @@ export default async function BlogPost({ params }: Props) {
                         </div>
                     )}
 
-                    {/* 
-            TODO: Add markdown renderer here
-            For now, we are rendering raw content 
-        */}
-                    <div className="prose prose-neutral dark:prose-invert max-w-none">
-                        <pre className="whitespace-pre-wrap font-sans">
+                    <div className="prose prose-neutral dark:prose-invert max-w-none prose-p:leading-relaxed prose-a:text-blue-500 dark:prose-a:text-blue-400 prose-a:font-medium hover:prose-a:underline">
+                        <ReactMarkdown remarkPlugins={[remarkGfm, remarkBreaks]}>
                             {post.content}
-                        </pre>
+                        </ReactMarkdown>
                     </div>
                 </div>
             </div>

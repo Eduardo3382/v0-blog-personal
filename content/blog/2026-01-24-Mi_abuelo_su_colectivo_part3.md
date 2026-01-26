@@ -7,7 +7,7 @@ coverImage: "/blog/2026-01-26-mi-abuelo-su-colectivo-p3/cover.jpg"
 tags: ["transporte", "memorias", "familia"]
 ---
 
-Capítulo 3 – El colectivo escondido
+#### Capítulo 3 – El colectivo escondido
 Hoy viajo con mi nieto y no puedo evitar el espejo: yo con mi abuelo, él conmigo.
 El recorrido es otro, los ruidos también, pero la pregunta persiste.
 La historia de mi abuelo colectivero no la escuché de su boca. Me llegó a través de mi papá, como llegan las historias familiares importantes: incompletas, cargadas de gestos más que de fechas. Decía que mi abuelo Manolo trabajaba en un colectivo. O mejor dicho, que junto a otros socios era dueño del vehículo. Ahí estaban puestos los ahorros, el trabajo de años y la seguridad de la familia.
@@ -30,3 +30,7 @@ Las segunda huelgas duró casi 3 meses. Hubo incautaciones, negociaciones, acuer
 Mientras el tranvía avanza, mi nieto mira por la ventana. Yo pienso que esta escena ya ocurrió antes: un abuelo, un nieto y una ciudad que se reorganiza sin pedir permiso. Cambian los vehículos, cambian los discursos, pero la tensión es la misma: ¿cómo se regula sin arrasar?, ¿como se regula sin sacar provecho?, ¿Cómo se negocia o se pide sin quedar afuera?. ¿Como se deja a los particulares hacer negocios con la minimas reglas para que pueda crecer en orden?
 
 Que historia esta, como seguirá lo sabremos en la proxima parada?
+
+Fuentes y material de referencia
+- Estudio académico sobre la huelga de colectiveros de 1942 (CDSA / Aacademica) https://cdsa.aacademica.org/000-108/980.pdf
+- Archivo fotográfico histórico de colectivos – Paraná hacia el mundo https://paranahaciaelmundo.com/en-el-dia-del-colectivero-las-20-mejores-fotos-historicas-de-colectivos-paranaenses/
