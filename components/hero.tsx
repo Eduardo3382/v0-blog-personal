@@ -1,9 +1,10 @@
 "use client";
 
-import { Github, Linkedin, Twitter, ChevronDown, Instagram } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import Link from "next/link";
 import { siteConfig } from "@/lib/site-config";
 import { MotionWrapper } from "./motion-wrapper";
+import { getSocialLinks } from "@/lib/social-links";
 
 function MastodonIcon({ className }: { className?: string }) {
   return (
@@ -30,6 +31,9 @@ function NotionIcon({ className }: { className?: string }) {
     </svg>
   );
 }
+
+const heroSocialIds = ["linkedin", "github", "twitter", "mastodon", "instagram"] as const;
+const heroSocialLinks = getSocialLinks(heroSocialIds);
 
 export function Hero() {
   const scrollToAbout = () => {
@@ -66,46 +70,17 @@ export function Hero() {
 
         <MotionWrapper delay={0.4}>
           <div className="flex flex-wrap gap-4 mb-12">
-            <Link
-              href={siteConfig.links.linkedin}
-              target="_blank"
-              className="p-3 rounded-lg bg-secondary hover:bg-primary hover:text-primary-foreground transition-all duration-300 group"
-              aria-label="LinkedIn"
-            >
-              <Linkedin className="w-5 h-5 group-hover:scale-110 transition-transform" />
-            </Link>
-            <Link
-              href={siteConfig.links.github}
-              target="_blank"
-              className="p-3 rounded-lg bg-secondary hover:bg-primary hover:text-primary-foreground transition-all duration-300 group"
-              aria-label="GitHub"
-            >
-              <Github className="w-5 h-5 group-hover:scale-110 transition-transform" />
-            </Link>
-            <Link
-              href={siteConfig.links.twitter}
-              target="_blank"
-              className="p-3 rounded-lg bg-secondary hover:bg-primary hover:text-primary-foreground transition-all duration-300 group"
-              aria-label="Twitter"
-            >
-              <Twitter className="w-5 h-5 group-hover:scale-110 transition-transform" />
-            </Link>
-            <Link
-              href={siteConfig.links.mastodon}
-              target="_blank"
-              className="p-3 rounded-lg bg-secondary hover:bg-primary hover:text-primary-foreground transition-all duration-300 group"
-              aria-label="Mastodon"
-            >
-              <MastodonIcon className="w-5 h-5 group-hover:scale-110 transition-transform" />
-            </Link>
-            <Link
-              href={siteConfig.links.instagram}
-              target="_blank"
-              className="p-3 rounded-lg bg-secondary hover:bg-primary hover:text-primary-foreground transition-all duration-300 group"
-              aria-label="Instagram"
-            >
-              <Instagram className="w-5 h-5 group-hover:scale-110 transition-transform" />
-            </Link>
+            {heroSocialLinks.map((link) => (
+              <Link
+                key={link.id}
+                href={link.href}
+                target="_blank"
+                className="p-3 rounded-lg bg-secondary hover:bg-primary hover:text-primary-foreground transition-all duration-300 group"
+                aria-label={link.name}
+              >
+                <link.icon className="w-5 h-5 group-hover:scale-110 transition-transform" />
+              </Link>
+            ))}
           </div>
         </MotionWrapper>
       </div>

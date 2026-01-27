@@ -1,7 +1,5 @@
-import { Github, Linkedin, Twitter, Mail, Instagram } from "lucide-react";
 import Link from "next/link";
-import type { ComponentType } from "react";
-import { siteConfig } from "@/lib/site-config";
+import { getSocialLinks } from "@/lib/social-links";
 
 function MastodonIcon({ className }: { className?: string }) {
   return (
@@ -29,51 +27,9 @@ function NotionIcon({ className }: { className?: string }) {
   );
 }
 
-type SocialLink = {
-  name: string;
-  href: string;
-  icon: ComponentType<{ className?: string }>;
-  username: string;
-};
-
-const socialLinks: SocialLink[] = [
-  {
-    name: "LinkedIn",
-    href: siteConfig.links.linkedin,
-    icon: Linkedin,
-    username: siteConfig.links.linkedin.split("/in/")[1] || "LinkedIn",
-  },
-  {
-    name: "GitHub",
-    href: siteConfig.links.github,
-    icon: Github,
-    username: siteConfig.links.github.split(".com/")[1] || "GitHub",
-  },
-  {
-    name: "Twitter / X",
-    href: siteConfig.links.twitter,
-    icon: Twitter,
-    username: "@ehdela",
-  },
-  {
-    name: "Mastodon",
-    href: siteConfig.links.mastodon,
-    icon: MastodonIcon,
-    username: "@Eduardomastodon@mastodon.social",
-  },
-  {
-    name: "Notion",
-    href: siteConfig.links.notion,
-    icon: NotionIcon,
-    username: "Pastillitas de tecnología",
-  },
-  {
-    name: "Instagram",
-    href: siteConfig.links.instagram,
-    icon: Instagram,
-    username: "@edu_byte",
-  },
-];
+const socialLinks = getSocialLinks();
+const emailLink = socialLinks.find((link) => link.id === "email");
+const socialOnlyLinks = socialLinks.filter((link) => link.id !== "email");
 
 export function Contact() {
   return (
@@ -93,27 +49,29 @@ export function Contact() {
               traves de cualquiera de estos canales.
             </p>
 
-            <div className="flex items-center gap-3 p-4 rounded-xl bg-card border border-border mb-6">
-              <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center">
-                <Mail className="w-5 h-5 text-accent" />
+            {emailLink && (
+              <div className="flex items-center gap-3 p-4 rounded-xl bg-card border border-border mb-6">
+                <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center">
+                  <emailLink.icon className="w-5 h-5 text-accent" />
+                </div>
+                <div>
+                  <p className="text-sm text-muted-foreground">{emailLink.name}</p>
+                  <Link
+                    href={emailLink.href}
+                    className="text-foreground hover:text-primary transition-colors font-medium"
+                  >
+                    {emailLink.username}
+                  </Link>
+                </div>
               </div>
-              <div>
-                <p className="text-sm text-muted-foreground">Email</p>
-                <Link
-                  href={`mailto:${siteConfig.email}`}
-                  className="text-foreground hover:text-primary transition-colors font-medium"
-                >
-                  {siteConfig.email}
-                </Link>
-              </div>
-            </div>
+            )}
           </div>
 
           <div className="space-y-4">
             <h3 className="text-lg font-semibold text-foreground mb-4">
               Redes Sociales
             </h3>
-            {socialLinks.map((link) => (
+            {socialOnlyLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
