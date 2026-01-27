@@ -19,7 +19,7 @@ export default function PastWorkshopsPage() {
                         className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors mb-8 group"
                     >
                         <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
-                        Volver a Enseñanza
+                        Volver a Recursos
                     </Link>
 
                     <div className="mb-12">

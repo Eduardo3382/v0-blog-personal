@@ -18,7 +18,7 @@ const teachingItems = [
   },
   {
     icon: BookOpen,
-    title: "Cursos Online",
+    title: "Cursos Online (Próximamente)",
     description:
       "Material didactico estructurado para aprender a tu ritmo desde cualquier lugar.",
   },
@@ -26,7 +26,9 @@ const teachingItems = [
     icon: Users,
     title: "Mentorias",
     description:
-      "Sesiones personalizadas para resolver dudas y guiarte en tu camino tech.",
+      "Sesiones personalizadas para resolver dudas y guiarte en tu camino tech. Para contratar, envíame un mail desde la sección de contacto.",
+    href: "#contact",
+    linkText: "Ir a contacto",
   },
   {
     icon: Video,
@@ -40,7 +42,9 @@ const teachingItems = [
     icon: FileText,
     title: "Recursos Gratuitos",
     description:
-      "Guias, tutoriales y materiales de estudio accesibles para todos.",
+      "Guias, tutoriales y materiales de estudio accesibles para todos. Página en construcción donde pronto encontrarás estos recursos.",
+    href: "/recursos",
+    linkText: "Ver recursos",
   },
 ];
 
@@ -54,7 +58,7 @@ export function Teaching() {
               Educación
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2 mb-4">
-              Enseñanza
+              Recursos
             </h2>
             <p className="text-muted-foreground max-w-2xl leading-relaxed">
               Mi misión es hacer la tecnología accesible para todos. Aquí
@@ -118,7 +122,7 @@ export function Teaching() {
         <div className="mt-12 p-6 rounded-xl bg-gradient-to-r from-primary/10 to-accent/10 border border-primary/20">
           <p className="text-center text-foreground">
             ¿Interesado en aprender? Contáctame y conversemos sobre cómo puedo
-            ayudarote en tu viaje tech.
+            ayudarte en tu viaje tech.
           </p>
         </div>
       </div>
