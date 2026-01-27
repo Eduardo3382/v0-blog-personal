@@ -30,5 +30,3 @@ next-env.d.ts
 .DS_Store
 *.swp
 
-# Notas privadas / borradores que no se suben a GitHub
-edition-web/
