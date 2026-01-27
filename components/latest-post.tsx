@@ -18,7 +18,7 @@ export function LatestPost({ post }: { post: Post }) {
   if (!post) return null;
 
   return (
-    <section className="py-12 px-6 md:px-12 lg:px-24">
+    <section id="post" className="py-12 px-6 md:px-12 lg:px-24 scroll-mt-20">
       <div className="max-w-6xl mx-auto">
         <MotionWrapper>
           <span className="text-primary font-mono text-sm tracking-wider">

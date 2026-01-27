@@ -11,7 +11,7 @@ interface UpcomingWorkshopProps {
 
 export function UpcomingWorkshop({ workshop }: UpcomingWorkshopProps) {
     return (
-        <section className="py-12 px-6 md:px-12 lg:px-24 bg-background">
+        <section id="proximos" className="py-12 px-6 md:px-12 lg:px-24 bg-background scroll-mt-20">
             <div className="max-w-6xl mx-auto">
                 <MotionWrapper>
                     <div className="mb-8">
