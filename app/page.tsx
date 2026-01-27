@@ -11,6 +11,7 @@ import { Footer } from "@/components/footer";
 import { getAllPosts } from "@/lib/blog";
 import { getUpcomingWorkshop } from "@/lib/workshops";
 import { UpcomingWorkshop } from "@/components/upcoming-workshop";
+import { LatestNewsletter } from "@/components/latest-newsletter";
 
 export default function Home() {
   const posts = getAllPosts();
@@ -26,6 +27,8 @@ export default function Home() {
       {latestPost && <LatestPost post={latestPost} />}
 
       {upcomingWorkshop && <UpcomingWorkshop workshop={upcomingWorkshop} />}
+
+      <LatestNewsletter />
 
       <About />
 

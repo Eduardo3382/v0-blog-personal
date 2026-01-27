@@ -8,6 +8,7 @@ const navLinks = [
   { name: "Inicio", href: "/" },
   { name: "Sobre Mí", href: "/#about" },
   { name: "Blog", href: "/#blog" },
+  { name: "Boletín", href: "/#boletin" },
   { name: "Fotos", href: "/#fotos" },
   { name: "Recursos", href: "/#ensenanza" },
   { name: "Contacto", href: "/#contact" },

@@ -11,6 +11,11 @@ export const siteConfig = {
         instagram: "https://www.instagram.com/edu_byte/",
         notion: "https://www.notion.so/eduardoescritos/Pastillitas-de-tecnolog-a-2c96916a4f714d4f8e1a1ccf0f4f50cd",
     },
+    latestNewsletter: {
+        title: "Boletín #97",
+        url: "https://eduardoescritos.notion.site/Bolet-n-97-2e73fc8867ff80daa262f8ed283dc5d6?source=copy_link",
+        allNewslettersUrl: "https://eduardoescritos.notion.site/Pastillitas-de-tecnolog-a-2c96916a4f714d4f8e1a1ccf0f4f50cd?source=copy_link"
+    },
     url: "https://eduardo.net.ar",
 }
 

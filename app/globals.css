@@ -90,3 +90,8 @@
     @apply bg-background text-foreground;
   }
 }
+@layer utilities {
+  .glass-card {
+    @apply bg-card/60 backdrop-blur-md border border-white/10 dark:border-white/5 shadow-2xl;
+  }
+}
