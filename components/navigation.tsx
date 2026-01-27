@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 const navLinks = [
   { name: "Inicio", href: "/" },
@@ -35,10 +36,16 @@ export function Navigation() {
     >
       <nav className="max-w-6xl mx-auto px-6 md:px-12 py-4 flex items-center justify-between">
         <Link
-          href="#"
-          className="text-xl font-bold text-foreground hover:text-primary transition-colors"
+          href="/"
+          className="flex items-center gap-2 hover:opacity-80 transition-opacity"
         >
-          E<span className="text-primary">.</span>
+          <Image
+            src="/icon.png"
+            alt="Logo"
+            width={32}
+            height={32}
+            className="rounded-sm"
+          />
         </Link>
 
         {/* Desktop Navigation */}
