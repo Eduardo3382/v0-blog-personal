@@ -41,7 +41,7 @@ export function LatestNewsletter() {
                                 </h3>
                                 <p className="text-muted-foreground text-lg leading-relaxed max-w-2xl">
                                     Cada semana comparto curiosidades, noticias y tips sobre el mundo tecnológico.
-                                    No te pierdas las últimas reflexiones para potenciar tu mundo digital.
+                                    En este número **¿Cuál es el botón más peligroso del celular?.**
                                 </p>
                             </div>
 
