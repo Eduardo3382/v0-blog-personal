@@ -6,15 +6,18 @@ Trabajar de forma profesional significa tener una copia exacta de tu web en tu c
 |:----------------|:----------------------|:--------------------------------------------|
 | **Sincronizar** | `git pull`            | **Siempre** antes de empezar.               |
 | **Probar**      | `npm run dev`         | Cuando quieras ver cómo queda el contenido. |
+| **Verificar**   | `npm run build`       | **Opcional:** Para buscar errores antes de subir. |
 | **Preparar**    | `git add .`           | Cuando terminaste de escribir/editar.       |
 | **Guardar**     | `git commit -m "msj"` | Para ponerle nombre a tus cambios.          |
 | **Publicar**    | `git push`            | Para enviar todo a GitHub y Vercel.         |
 
-## 2. Ver cambios en tu PC
-Para abrir tu web en modo "previsualización":
-1. Abre la terminal en la carpeta del proyecto.
-2. Escribe: `npm run dev`.
-3. Abre en tu navegador: `http://localhost:3000`.
+## 2. Los dos modos de previsualización
+### A. Modo Desarrollador (`npm run dev`)
+Es el que usarás el 99% del tiempo. Permite ver cambios al instante en `http://localhost:3000` mientras editas.
+### B. Modo Verificación (`npm run build`)
+Sirve para simular cómo se verá la web final y detectar errores.
+- **¿Para qué sirve?**: Analiza todo el código y artículos. Si hay un nombre mal escrito, un archivo faltante o un error técnico, te avisará con letras rojas.
+- **¿Cuándo usarlo?**: No es obligatorio hacerlo siempre, pero es muy útil antes de un `git push` si hiciste cambios estructurales o borraste archivos.
 
 ## 3. Comandos Git de Emergencia
 - **¿Qué cambié?**: `git status`
