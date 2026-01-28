@@ -1,6 +1,5 @@
 # 03 - Entorno Local y Git
 Trabajar de forma profesional significa tener una copia exacta de tu web en tu computadora para probar cambios antes de que el mundo los vea.
-
 ## 1. El Flujo de Trabajo (Semáforo)
 | Paso            | Comando               | ¿Cuándo?                                    |
 |:----------------|:----------------------|:--------------------------------------------|
@@ -10,7 +9,6 @@ Trabajar de forma profesional significa tener una copia exacta de tu web en tu c
 | **Preparar**    | `git add .`           | Cuando terminaste de escribir/editar.       |
 | **Guardar**     | `git commit -m "msj"` | Para ponerle nombre a tus cambios.          |
 | **Publicar**    | `git push`            | Para enviar todo a GitHub y Vercel.         |
-
 ## 2. Los dos modos de previsualización
 ### A. Modo Desarrollador (`npm run dev`)
 Es el que usarás el 99% del tiempo. Permite ver cambios al instante en `http://localhost:3000` mientras editas.
@@ -18,7 +16,6 @@ Es el que usarás el 99% del tiempo. Permite ver cambios al instante en `http://
 Sirve para simular cómo se verá la web final y detectar errores.
 - **¿Para qué sirve?**: Analiza todo el código y artículos. Si hay un nombre mal escrito, un archivo faltante o un error técnico, te avisará con letras rojas.
 - **¿Cuándo usarlo?**: No es obligatorio hacerlo siempre, pero es muy útil antes de un `git push` si hiciste cambios estructurales o borraste archivos.
-
 ## 3. Comandos Git de Emergencia
 - **¿Qué cambié?**: `git status`
 - **Me equivoqué, quiero borrar mis cambios locales**: `git restore .`
@@ -27,6 +24,5 @@ Sirve para simular cómo se verá la web final y detectar errores.
   git fetch origin
   git reset --hard origin/main
   ```
-
 > [!WARNING]
 > El comando `reset --hard` borrará lo que no hayas subido a GitHub. Úsalo solo como último recurso.
