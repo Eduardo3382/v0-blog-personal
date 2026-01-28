@@ -21,6 +21,11 @@ Contenido en Markdown aquí...
 - **slug**: **¡Vital!** Es el nombre que aparecerá en la dirección web (ej: `eduardo.net.ar/blog/mi-articulo-slug`). Debe ser único, sin espacios y preferiblemente sin tildes ni eñes.
 - **coverImage**: La imagen principal. Sube tu imagen a `public/blog/` y pon aquí la ruta que empieza con `/blog/`.
 - **tags**: Palabras clave para el buscador y el sistema de filtrado.
+>¿Por qué corchetes [], comas , y comillas "?
+>Corchetes []: Indican que es una lista. Esto permite que el blog sepa que son varias palabras separadas y no una sola frase larga.
+>Comillas ": Protegen el texto. Si usas una etiqueta con espacios o caracteres especiales, las comillas aseguran que el sistema no se confunda.
+>Comas ,: Separan un elemento de otro.
+
 ## 2. Gestión de Boletines (Newsletter)
 Los boletines no son archivos sueltos, sino que se gestionan desde el archivo central de configuración.
 1. Abre el archivo `lib/site-config.ts`.

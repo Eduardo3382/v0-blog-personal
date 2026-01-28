@@ -30,7 +30,9 @@ Cómo agregarlas en los Artículos (Markdown)
 En los archivos de texto (.md), las etiquetas se agregan en la parte superior (el frontmatter).
 Reglas importantes:
 NO hace falta el #: El código del blog ya está preparado para ponerle el símbolo # automáticamente cuando lo muestra. En el archivo, pon solo la palabra.
-Formato de lista: Se recomienda ponerlas entre corchetes [] y separadas por comas.
+Formato de lista: Se recomienda ponerlas entre corchetes [] Indican que es una lista, separadas por comas,  separan una etiqueta de otra, 
+y separas con Comillas ": Protegen el texto. Si usas una etiqueta con espacios o caracteres especiales, las comillas aseguran que el sistema no se confunda.
+
 Ejemplo correcto:
 markdown
 ---
