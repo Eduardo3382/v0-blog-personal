@@ -25,7 +25,17 @@ Contenido en Markdown aquí...
 >Corchetes []: Indican que es una lista. Esto permite que el blog sepa que son varias palabras separadas y no una sola frase larga.
 >Comillas ": Protegen el texto. Si usas una etiqueta con espacios o caracteres especiales, las comillas aseguran que el sistema no se confunda.
 >Comas ,: Separan un elemento de otro.
-
+### Fotos Adicionales en el Contenido
+Puedes agregar más fotos en el cuerpo del artículo (intermedio o final) usando dos métodos:
+- **Método Markdown (Ancho Total):** Usa `![Descripción](/blog/carpeta/foto.jpg)`. La imagen ocupará todo el ancho y mostrará la descripción como un epígrafe elegante debajo.
+- **Método HTML (Control de Tamaño):** Si quieres que sea más pequeña, usa este código:
+`<img src="/blog/carpeta/foto.jpg" style="width: 50%; height: auto;" />`
+*(Puedes cambiar `50%` por `25%` o el valor que prefieras).*
+### Beneficios Automáticos (Premium)
+Cualquier foto que agregues recibirá estas mejoras sin que tengas que hacer nada:
+- **Optimización Next.js:** Se convierte automáticamente a formato WebP (más liviano) y usa "Lazy Loading" (carga solo cuando llegas a ella).
+- **Diseño Coherente:** Se aplican bordes redondeados, una sombra suave y se centra automáticamente en la página.
+- **Epígrafes:** Si usas el formato Markdown, el texto descriptivo aparecerá debajo de la foto en cursiva.
 ## 2. Gestión de Boletines (Newsletter)
 Los boletines no son archivos sueltos, sino que se gestionan desde el archivo central de configuración.
 1. Abre el archivo `lib/site-config.ts`.
