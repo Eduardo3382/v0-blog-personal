@@ -119,7 +119,28 @@ export default async function BlogPost({ params }: Props) {
                     )}
 
                     <div className="prose prose-neutral dark:prose-invert max-w-none prose-p:leading-relaxed prose-p:text-stone-200 prose-headings:text-slate-50 prose-li:text-cyan-100 prose-a:text-cyan-400 dark:prose-a:text-cyan-400 prose-a:font-medium hover:prose-a:underline">
-                        <ReactMarkdown remarkPlugins={[remarkGfm, remarkBreaks]}>
+                        <ReactMarkdown
+                            remarkPlugins={[remarkGfm, remarkBreaks]}
+                            components={{
+                                img: ({ node, ...props }) => (
+                                    <span className="block my-10 text-center">
+                                        <Image
+                                            src={props.src || ""}
+                                            alt={props.alt || ""}
+                                            width={800}
+                                            height={500}
+                                            className="rounded-2xl mx-auto border bg-muted/20 shadow-lg object-contain h-auto max-w-full"
+                                            style={props.style as any}
+                                        />
+                                        {props.alt && (
+                                            <span className="block text-sm text-muted-foreground mt-3 italic">
+                                                {props.alt}
+                                            </span>
+                                        )}
+                                    </span>
+                                ),
+                            }}
+                        >
                             {post.content}
                         </ReactMarkdown>
                     </div>
