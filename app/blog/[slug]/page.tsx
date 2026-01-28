@@ -118,7 +118,7 @@ export default async function BlogPost({ params }: Props) {
                         </div>
                     )}
 
-                    <div className="prose prose-neutral dark:prose-invert max-w-none prose-p:leading-relaxed prose-p:text-stone-200 prose-headings:text-slate-50 prose-li:text-cyan-100 prose-a:text-cyan-400 dark:prose-a:text-cyan-400 prose-a:font-medium hover:prose-a:underline">
+                    <div className="prose prose-neutral dark:prose-invert max-w-none prose-p:leading-relaxed prose-p:text-stone-200 prose-strong:text-white prose-strong:font-bold prose-headings:text-slate-50 prose-li:text-cyan-100 prose-a:text-cyan-400 dark:prose-a:text-cyan-400 prose-a:font-medium hover:prose-a:underline">
                         <ReactMarkdown
                             remarkPlugins={[remarkGfm, remarkBreaks]}
                             components={{
