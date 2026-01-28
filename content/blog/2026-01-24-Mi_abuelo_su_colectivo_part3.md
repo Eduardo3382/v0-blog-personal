@@ -31,6 +31,6 @@ Mientras el tranvía avanza, mi nieto mira por la ventana. Yo pienso que esta es
 
 Que historia esta, como seguirá lo sabremos en la proxima parada?
 
-Fuentes y material de referencia
+**Fuentes y material de referencia**
 - Estudio académico sobre la huelga de colectiveros de 1942 (CDSA / Aacademica) https://cdsa.aacademica.org/000-108/980.pdf
 - Archivo fotográfico histórico de colectivos – Paraná hacia el mundo https://paranahaciaelmundo.com/en-el-dia-del-colectivero-las-20-mejores-fotos-historicas-de-colectivos-paranaenses/
