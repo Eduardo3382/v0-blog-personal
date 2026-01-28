@@ -33,6 +33,6 @@ Continue building your app on:
 
 Para ayudarte con la gestión de tu blog, he organizado toda la información en la carpeta [documentacion](./documentacion):
 
-- **[Guía de Workshops](./documentacion/GUIA_WORKSHOPS.md)**: Instrucciones detalladas para agregar nuevos eventos y gestionar inscripciones.
-- **[Guía de Fotos](./documentacion/guia_act_photo.md)**: Cómo actualizar la galería y procesar imágenes.
-- **[Recursos de Edición](./documentacion/edition-web)**: Una colección de guías sobre Git, edición local, dominios y más.
+- **[Guía de Workshops](./documentacion/14-%20Guia%20workshops.md)**: Instrucciones detalladas para agregar nuevos eventos y gestionar inscripciones.
+- **[Guía de Fotos](./documentacion/15-%20Guia%20actualizacion%20fotos.md)**: Cómo actualizar la galería y procesar imágenes.
+- **[Recursos de Edición](./documentacion/)**: Una colección de guías sobre Git, edición local, dominios y más.

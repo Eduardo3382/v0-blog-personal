@@ -6,7 +6,8 @@ import exifr from 'exifr';
 const BLOG_DIR = './content/blog';
 const WORKSHOPS_DIR = './content/workshops';
 const PHOTOS_DIR = './public/photos';
-const OUTPUT_FILE = './documentacion/DICCIONARIO_ETIQUETAS.md';
+const DOCUMENTACION_DIR = './documentacion';
+const DICTIONARY_PREFIX = '12a- Tag-diccionario';
 
 async function getTagsFromDir(dir, extension = '.md') {
     if (!fs.existsSync(dir)) return [];
@@ -55,7 +56,11 @@ async function main() {
     const allTags = new Set([...blogTags, ...workshopTags, ...photoTags]);
     const sortedTags = Array.from(allTags).sort();
 
-    const timestamp = new Date().toLocaleString('es-ES');
+    const now = new Date();
+    const timestamp = now.toLocaleString('es-ES');
+    const dateShort = now.toISOString().split('T')[0]; // YYYY-MM-DD
+    const outputFileName = `${DICTIONARY_PREFIX}${dateShort}.md`;
+    const outputFilePath = path.join(DOCUMENTACION_DIR, outputFileName);
 
     let content = `# Diccionario de Etiquetas\n`;
     content += `Última actualización: ${timestamp}\n\n`;
@@ -76,10 +81,20 @@ async function main() {
         });
     }
 
-    if (!fs.existsSync('./documentacion')) fs.mkdirSync('./documentacion');
-    fs.writeFileSync(OUTPUT_FILE, content);
+    if (!fs.existsSync(DOCUMENTACION_DIR)) fs.mkdirSync(DOCUMENTACION_DIR);
 
-    console.log(`✅ Diccionario generado en ${OUTPUT_FILE}`);
+    // Limpiar diccionarios antiguos
+    const files = fs.readdirSync(DOCUMENTACION_DIR);
+    files.forEach(file => {
+        if (file.startsWith(DICTIONARY_PREFIX) && file !== outputFileName) {
+            fs.unlinkSync(path.join(DOCUMENTACION_DIR, file));
+            console.log(`🗑️ Eliminado diccionario antiguo: ${file}`);
+        }
+    });
+
+    fs.writeFileSync(outputFilePath, content);
+
+    console.log(`✅ Diccionario generado en ${outputFilePath}`);
     console.log(`Etiquetas totales encontradas: ${sortedTags.length}`);
 }
 
