@@ -1,41 +1,53 @@
 # 04 - Gestión de Contenido
-
 Toda la web está diseñada para que crezca sin que tengas que tocar código de programación.
 
 ## 1. Artículos del Blog (.md)
-
 Cada artículo es un archivo de texto en la carpeta `content/blog/`.
 
-### Plantilla de un artículo:
+### Plantilla completa de un artículo:
 ```markdown
 ---
 title: "Título de tu artículo"
 date: "2026-01-22"
 excerpt: "Resumen corto que aparece en la tarjeta."
+slug: "mi-articulo-slug"
+coverImage: "/blog/nombre-de-imagen.jpg"
 tags: ["tecnologia", "educacion"]
 ---
 Contenido en Markdown aquí...
 ```
 
-> [!NOTE]
-> El sistema calcula automáticamente el tiempo de lectura y ordena los posts por fecha. El más reciente siempre aparece destacado en la Home.
+### ¿Para qué sirve cada campo?
+- **title**: El nombre principal del artículo.
+- **date**: La fecha. Determina el orden: la más reciente aparecerá primero y destacada en la Home.
+- **excerpt**: Una breve intro para "tentar" al lector.
+- **slug**: **¡Vital!** Es el nombre que aparecerá en la dirección web (ej: `eduardo.net.ar/blog/mi-articulo-slug`). Debe ser único, sin espacios y preferiblemente sin tildes ni eñes.
+- **coverImage**: La imagen principal. Sube tu imagen a `public/blog/` y pon aquí la ruta que empieza con `/blog/`.
+- **tags**: Palabras clave para el buscador y el sistema de filtrado.
 
-## 2. Gestión de Fotos
+## 2. Gestión de Boletines (Newsletter)
+Los boletines no son archivos sueltos, sino que se gestionan desde el archivo central de configuración.
+1. Abre el archivo `lib/site-config.ts`.
+2. Busca la sección `latestNewsletter`.
+3. Actualiza el `title` con el número de boletín y el `url` con el enlace directo (generalmente de Notion).
+4. Guarda y sube el cambio. La Home se actualizará automáticamente con el nuevo link.
 
-### Para la Galería:
-1. Sube las fotos a `public/photos/`.
-2. Corre el comando: `npm run generate-photos`.
-3. ¡Listo! La galería se actualiza sola con las nuevas imágenes y sus fechas.
+## 3. Próximos Cursos y Workshops
+Se gestionan en `content/workshops/`. El sistema es inteligente:
+- Si la fecha del workshop es **futura**, aparecerá en la sección "Próximos Talleres" de la Home.
+- Si la fecha ya **pasó**, el sistema lo moverá automáticamente a la sección de "Workshops Pasados".
 
-### Para los Artículos:
-Sube la imagen a `public/blog/` y ponla en el encabezado del `.md` como `coverImage: "/blog/nombre.jpg"`.
-
-## 3. Diccionario de Etiquetas
-Para mantener el orden con las etiquetas (#tecnología, #ia, etc.), usa:
-```bash
-npm run generate-tags
+### Estructura de un Workshop:
+```markdown
+---
+title: "Nombre del Curso"
+date: "2026-02-06"
+flyer: "/workshop/nombre_imagen.jpg"
+description: "Breve resumen de lo que se va a aprender."
+---
 ```
-Esto actualiza el archivo `documentacion/DICCIONARIO_ETIQUETAS.md` con todo lo que has usado hasta ahora.
+*Las imágenes de los flyers deben subirse a `public/workshop/`.*
 
-## 4. Workshops (Talleres)
-Funcionan igual que el blog: Crea un `.md` en `content/workshops/`. La web mostrará automáticamente el próximo evento y los pasados en sus respectivas secciones.
+## 4. Gestión de Fotos y Etiquetas
+- **Galería**: Sube fotos a `public/photos/` y corre `npm run generate-photos`.
+- **Diccionario**: Corre `npm run generate-tags` para actualizar tu lista de etiquetas en `12a- Tag-diccionarioYYYY-MM-DD.md`.
