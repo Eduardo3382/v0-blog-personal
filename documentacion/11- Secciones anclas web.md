@@ -5,7 +5,7 @@ Para facilitar la navegación y poder compartir enlaces que lleven directamente 
 | :-------------------------- | :------------------ | :------------------------------------------------------------------------ |
 | **Inicio**                  | `#`                  | Parte superior de la página (Hero).                                       |
 | **Último Artículo**         | `#post`              | El artículo más reciente destacado con imagen grande.                     |
-| **Próximos Talleres**       | `#proximos`          | Sección de cursos o talleres que se dictarán pronto.                      |
+| **Próximos Talleres**       | `#talleres`          | Sección de cursos o talleres que se dictarán pronto.                      |
 | **Último Boletín**          | `#boletin`           | Sección con el link al último boletín de "Pastillitas".                   |
 | **Sobre Mí**                | `#about`             | Biografía y pilares fundamentales.                                        |
 | **Artículos Anteriores**    | `#blog`              | Lista de los posts realizados anteriormente.                              |
