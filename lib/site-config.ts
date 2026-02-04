@@ -12,8 +12,8 @@ export const siteConfig = {
         notion: "https://www.notion.so/eduardoescritos/Pastillitas-de-tecnolog-a-2c96916a4f714d4f8e1a1ccf0f4f50cd",
     },
     latestNewsletter: {
-        title: "Boletín # 98",
-        url: "https://eduardoescritos.notion.site/Bolet-n-98-2ef3fc8867ff80379954d877119e9e2f?source=copy_link",
+        title: "Boletín # 99",
+        url: "https://eduardoescritos.notion.site/Bolet-n-99-2fd3fc8867ff80f2ad0bccc8f2c23a56?source=copy_link",
         allNewslettersUrl: "https://eduardoescritos.notion.site/Pastillitas-de-tecnolog-a-2c96916a4f714d4f8e1a1ccf0f4f50cd?source=copy_link"
     },
     url: "https://eduardo.net.ar",

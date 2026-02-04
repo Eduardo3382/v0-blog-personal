@@ -1,4 +1,5 @@
 import { Newspaper, ArrowRight, ArrowUpRight } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { siteConfig } from "@/lib/site-config";
 import { MotionWrapper } from "./motion-wrapper";
@@ -17,7 +18,7 @@ export function LatestNewsletter() {
                             Actualidad
                         </span>
                         <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2">
-                            Último boletín gratuito emitido
+                            Último boletín emitido
                         </h2>
                     </div>
                 </MotionWrapper>
@@ -29,8 +30,13 @@ export function LatestNewsletter() {
 
                     <div className="relative grid md:grid-cols-[auto_1fr] gap-12 items-center">
                         <MotionWrapper delay={0.2} className="flex justify-center md:justify-start">
-                            <div className="w-24 h-24 md:w-32 md:h-32 rounded-2xl bg-gradient-to-br from-primary/30 to-accent/30 flex items-center justify-center border border-white/20 shadow-2xl backdrop-blur-md transition-transform hover:scale-105 duration-300">
-                                <Newspaper className="w-12 h-12 md:w-16 md:h-16 text-primary drop-shadow-lg" />
+                            <div className="w-24 h-24 md:w-32 md:h-32 relative rounded-2xl overflow-hidden border border-white/20 shadow-2xl transition-transform hover:scale-105 duration-300">
+                                <Image
+                                    src="/photos/Boletin99_ig_4_5.jpg"
+                                    alt="Boletín 99"
+                                    fill
+                                    className="object-cover"
+                                />
                             </div>
                         </MotionWrapper>
 
@@ -41,7 +47,7 @@ export function LatestNewsletter() {
                                 </h3>
                                 <p className="text-muted-foreground text-lg leading-relaxed max-w-2xl">
                                     Cada semana comparto curiosidades, noticias y tips sobre el mundo tecnológico.
-                                    En este número **¿Cuál es el botón más peligroso del celular?.**
+                                    En este número, tres jóvenes que no tienen 20 años hacen historia con la tecnología.
                                 </p>
                             </div>
 
@@ -67,9 +73,9 @@ export function LatestNewsletter() {
                                 </Link>
                             </div>
                         </MotionWrapper>
-                    </div>
-                </div>
-            </div>
-        </section>
+                    </div >
+                </div >
+            </div >
+        </section >
     );
 }
