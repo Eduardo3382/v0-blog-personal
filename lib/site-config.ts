@@ -2,7 +2,7 @@ export const siteConfig = {
     name: "Eduardo de la Fuente",
     title: "Eduardo de la Fuente | Tech Enthusiast & Educator",
     description: "Apasionado por la tecnología, motivado a aprender siempre y guiando a otros en su viaje tecnológico.",
-    email: "eduardo.h.delafuente@outlook.com",
+    email: "eduardodelafuente@duck.com",
     links: {
         linkedin: "https://www.linkedin.com/in/ededuardo-de-la-fuente/",
         github: "https://github.com/Eduardo3382",
