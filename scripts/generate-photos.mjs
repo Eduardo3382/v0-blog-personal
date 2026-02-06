@@ -48,15 +48,38 @@ async function generatePhotos() {
 
             if (metadata.CreateDate || metadata.DateTimeOriginal) {
                 const d = new Date(metadata.CreateDate || metadata.DateTimeOriginal);
-                date = d.toISOString().split('T')[0];
-            } else {
+                if (!isNaN(d.getTime())) {
+                    date = d.toISOString().split('T')[0];
+                } else {
+                    console.warn(`⚠️ Fecha inválida en ${file} (CreateDate/DateTimeOriginal)`);
+                }
+            }
+
+            // Fallback: Si no hay fecha EXIF válida, usar fecha de archivo
+            if (!date) {
+                try {
+                    const stats = fs.statSync(filePath);
+                    const d = new Date(stats.birthtime || stats.mtime);
+                    if (!isNaN(d.getTime())) {
+                        date = d.toISOString().split('T')[0];
+                    }
+                } catch (e) {
+                    console.warn(`⚠️ No se pudo obtener fecha de archivo para ${file}`);
+                }
+            }
+
+            if (!date) {
                 console.warn(`⚠️ Advertencia: ${file} no tiene fecha de captura.`);
             }
 
             // XMP DateCreated - exifr lo lee como "DateCreated" directamente
             if (metadata.DateCreated) {
                 const sd = new Date(metadata.DateCreated);
-                sortDate = sd.toISOString().split('T')[0];
+                if (!isNaN(sd.getTime())) {
+                    sortDate = sd.toISOString().split('T')[0];
+                } else {
+                    console.warn(`⚠️ Fecha inválida en ${file} (DateCreated)`);
+                }
             }
 
             // 4. Tags
