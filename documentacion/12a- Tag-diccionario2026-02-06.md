@@ -1,5 +1,5 @@
 # Diccionario de Etiquetas
-Última actualización: 6/2/2026, 16:26:52
+Última actualización: 6/2/2026, 16:30:30
 
 Esta es una lista automática de todas las etiquetas detectadas en el blog. Úsala como referencia para mantener la consistencia.
 
@@ -9,7 +9,7 @@ Esta es una lista automática de todas las etiquetas detectadas en el blog. Úsa
 | **agentes** | Artículos |
 | **coleccionismo** | Artículos |
 | **eficiencia** | Artículos |
-| **estraategia** | Artículos |
+| **estrategia** | Artículos |
 | **familia** | Artículos |
 | **historias** | Artículos |
 | **memorias** | Artículos |
@@ -17,4 +17,5 @@ Esta es una lista automática de todas las etiquetas detectadas en el blog. Úsa
 | **recuerdos** | Artículos |
 | **reflexion** | Artículos |
 | **tecnologia** | Artículos |
+| **tecnología** | Artículos |
 | **transporte** | Artículos |
