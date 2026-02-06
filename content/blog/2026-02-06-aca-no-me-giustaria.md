@@ -1,10 +1,10 @@
 ---
-title: "Acá no me gustaria trabajar"
+title: "Acá no me gustaría trabajar."
 date: "2026-02-06"
 excerpt: "locales con y sin eficiencia."
 slug: "la-eficiencia"
 coverImage: "/blog/2026-02-06_agencia_turismo/imagen1.jpg"
-tags: ["historias", "coleccionismo", "recuerdos"]
+tags: ["eficiencia", "tecnologia", "estraategia","negocios"]
 ---
 
 | ![Agencia 1 inundada de papeles](/blog/2026-02-06_agencia_turismo/imagen1.jpg) | ![Los papeles cubren todo](/blog/2026-02-06_agencia_turismo/imagen2.jpg) |
