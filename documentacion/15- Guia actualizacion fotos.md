@@ -70,6 +70,25 @@ El script buscará en ese orden. Si encuentra texto en alguno de ellos, lo usar�
 Boletin99_ig_4_5.jpg
 ).
 
+### 4. Corrección Manual de Captions (Overrides)
+Si una foto ya está subida y no quieres (o no puedes) editar sus metadatos internos, puedes usar el sistema de **overrides**.
+1. Abre el archivo `lib/photos-overrides.json` en la raíz del proyecto.
+2. Añade una entrada con el nombre del archivo de la foto y los campos que quieras corregir:
+   ```json
+   {
+       "nombre_de_tu_foto.jpg": {
+           "caption": "Tu título personalizado",
+           "note": "Tu descripción personalizada",
+           "tags": ["etiqueta1", "etiqueta2"]
+       }
+   }
+   ```
+3. Ejecuta `npm run generate-photos` para aplicar los cambios.
+> [!TIP]
+> Este método es el más seguro y rápido para corregir errores de visualización sin tener que volver a procesar la imagen original.
+
+---
+
 
 4. **Publicar en la página**:
    ```bash
