@@ -30,12 +30,12 @@ export function LatestNewsletter() {
 
                     <div className="relative grid md:grid-cols-[auto_1fr] gap-12 items-center">
                         <MotionWrapper delay={0.2} className="flex justify-center md:justify-start">
-                            <div className="w-24 h-24 md:w-32 md:h-32 relative rounded-2xl overflow-hidden border border-white/20 shadow-2xl transition-transform hover:scale-105 duration-300">
+                            <div className="w-48 h-48 md:w-64 md:h-64 relative rounded-2xl overflow-hidden border border-white/20 shadow-2xl transition-transform hover:scale-105 duration-300">
                                 <Image
-                                    src="/photos/Boletin99_ig_4_5.jpg"
-                                    alt="Boletín 99"
+                                    src={latestNewsletter.image || "/photos/Boletin99_ig_4_5.jpg"}
+                                    alt={latestNewsletter.title}
                                     fill
-                                    className="object-cover"
+                                    className="object-contain"
                                 />
                             </div>
                         </MotionWrapper>
@@ -46,8 +46,7 @@ export function LatestNewsletter() {
                                     {latestNewsletter.title}
                                 </h3>
                                 <p className="text-muted-foreground text-lg leading-relaxed max-w-2xl">
-                                    Cada semana comparto curiosidades, noticias y tips sobre el mundo tecnológico.
-                                    En este número, tres jóvenes que no tienen 20 años hacen historia con la tecnología.
+                                    {latestNewsletter.description || "Cada semana comparto curiosidades, noticias y tips sobre el mundo tecnológico."}
                                 </p>
                             </div>
 

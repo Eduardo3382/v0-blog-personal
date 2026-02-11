@@ -41,7 +41,7 @@ export function UpcomingWorkshop({ workshop }: UpcomingWorkshopProps) {
                             <div className="flex items-center gap-2 text-primary mb-3">
                                 <Calendar className="w-5 h-5" />
                                 <span className="font-medium">
-                                    {new Date(workshop.date).toLocaleDateString("es-ES", {
+                                    {new Date(workshop.date + "T00:00:00").toLocaleDateString("es-ES", {
                                         day: "numeric",
                                         month: "long",
                                         year: "numeric",

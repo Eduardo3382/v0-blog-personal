@@ -13,12 +13,18 @@ Cada vez que agregues un artículo o una foto nueva con etiquetas, debes correr 
 `npm run generate-tags`
 2. Para verlo
 El comando anterior creará o actualizará un archivo de texto. Para ver el diccionario real con la lista de etiquetas, solo tienes que abrir este archivo en tu editor:
-`documentacion/DICCIONARIO_ETIQUETAS.md`
+`documentacion/12a-Tag-diccionarioyyyy-mm-dd.md`
 # ¿Cómo funciona? El script escanea automáticamente:
 Tus artículos en content/blog/
 Tus workshops en content/workshops/
 Tus fotos en public/photos/ (leyendo sus metadatos internos)
 Y te genera una tabla bonita indicando exactamente qué etiquetas estás usando y en qué secciones aparecen, para que siempre sepas si debes usar "tecnologia" o "innovacion", por ejemplo.
+## Script para generar el diccionario
+No es automático por defecto. Tienes que correr el comando: 
+`npm run generate-tags`
+Esto es así porque el diccionario genera un archivo nuevo en la carpeta de documentación cada vez que cambia, y si fuera automático al escribir, "ensuciaría" el historial de Git con muchos cambios pequeños mientras redactas.
+Sin embargo, si prefieres que sea automático cada vez que inicias el entorno de desarrollo o haces un build, puedo agregarlo a los scripts de package.json junto con el de las fotos. ¿Te gustaría que lo hiciera?
+
 # Finalidad a futuro (Para qué sirven)
 Aunque ahora solo se muestran visualmente, cargar etiquetas tiene tres propósitos fundamentales para el crecimiento de tu blog:
 ## 1

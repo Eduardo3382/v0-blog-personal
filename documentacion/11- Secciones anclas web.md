@@ -18,3 +18,5 @@ Para facilitar la navegación y poder compartir enlaces que lleven directamente 
 ---
 > [!NOTE]
 > Estos enlaces ya están integrados en el código de los componentes. Si en el futuro necesitas cambiar un ID, deberás hacerlo en el archivo `.tsx` correspondiente de la carpeta `components/`.
+
+https://www.eduardo.net.ar/#blog
