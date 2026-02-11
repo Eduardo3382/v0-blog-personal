@@ -15,7 +15,7 @@ export const siteConfig = {
         title: "Boletín 100",
         description: "La aplicacion olvidada que puede salvarnos de más de un olvido.",
         url: "https://eduardoescritos.notion.site/Bolet-n-100-Centenario-3033fc8867ff80e6b68ae7d47be39490?source=copy_link",
-        image: "/photos/Boletin100_calendar.jpg",
+        image: "/newsletter/Boletin100_calendar.jpg",
         allNewslettersUrl: "https://eduardoescritos.notion.site/Pastillitas-de-tecnolog-a-2c96916a4f714d4f8e1a1ccf0f4f50cd?source=copy_link"
     },
     url: "https://eduardo.net.ar",
