@@ -14,9 +14,20 @@ async function generatePhotos() {
 
         const photoData = [];
 
+        const OVERRIDES_FILE = './lib/photos-overrides.json';
+        let overrides = {};
+        if (fs.existsSync(OVERRIDES_FILE)) {
+            try {
+                overrides = JSON.parse(fs.readFileSync(OVERRIDES_FILE, 'utf8'));
+            } catch (err) {
+                console.warn(`⚠️ No se pudo leer el archivo de overrides: ${err.message}`);
+            }
+        }
+
         for (const [index, file] of files.entries()) {
             const filePath = path.join(PHOTOS_DIR, file);
             const fileNameNoExt = path.parse(file).name.replace(/_/g, ' ');
+            const fileOverrides = overrides[file] || {};
 
             let metadata = {};
             try {
@@ -37,10 +48,10 @@ async function generatePhotos() {
             };
 
             // 1. Título
-            const title = getText(metadata.ObjectName || metadata.Headline || metadata.title || metadata.Title) || fileNameNoExt;
+            const title = fileOverrides.caption || getText(metadata.ObjectName || metadata.Headline || metadata.title || metadata.Title) || fileNameNoExt;
 
             // 2. Descripción  
-            const description = getText(metadata.ImageDescription || metadata.Caption || metadata.UserComment || metadata.description || metadata.Description);
+            const description = fileOverrides.note || getText(metadata.ImageDescription || metadata.Caption || metadata.UserComment || metadata.description || metadata.Description);
 
             // 3. Fechas
             let date = "";
@@ -83,11 +94,13 @@ async function generatePhotos() {
             }
 
             // 4. Tags
-            let tags = [];
-            if (metadata.Keywords) {
-                tags = Array.isArray(metadata.Keywords) ? metadata.Keywords : [metadata.Keywords];
-            } else if (metadata.Subject) {
-                tags = Array.isArray(metadata.Subject) ? metadata.Subject : [metadata.Subject];
+            let tags = fileOverrides.tags;
+            if (!tags) {
+                if (metadata.Keywords) {
+                    tags = Array.isArray(metadata.Keywords) ? metadata.Keywords : [metadata.Keywords];
+                } else if (metadata.Subject) {
+                    tags = Array.isArray(metadata.Subject) ? metadata.Subject : [metadata.Subject];
+                }
             }
 
             photoData.push({
@@ -98,7 +111,7 @@ async function generatePhotos() {
                 note: description,
                 date: date,
                 sortDate: sortDate,
-                tags: tags
+                tags: tags || []
             });
         }
 
