@@ -17,7 +17,7 @@ export const photos: Photo[] = [
         "id": 1,
         "src": "/photos/Boletin99_ig_4_5.jpg",
         "alt": "Boletin99 ig 4 5",
-        "caption": "Boletin #99",
+        "caption": "Boletin # 99",
         "note": "Cuenta la historia de tres personas longevas y tecnológicas.",
         "date": "2026-02-06",
         "sortDate": "",
