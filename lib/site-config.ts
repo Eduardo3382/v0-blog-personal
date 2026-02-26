@@ -12,9 +12,9 @@ export const siteConfig = {
         notion: "https://www.notion.so/eduardoescritos/Pastillitas-de-tecnolog-a-2c96916a4f714d4f8e1a1ccf0f4f50cd",
     },
     latestNewsletter: {
-        title: "Boletín 101",
-        description: "nueve estrategias para evitar que tu celu o tu nube explote",
-        url: "https://eduardoescritos.notion.site/Bolet-n-101-30a3fc8867ff8080a37dd9c32a2b67ca?source=copy_link",
+        title: "Boletín #102",
+        description: "La 9na estrategia para que nuestro celular no explote la memoria",
+        url: "https://eduardoescritos.notion.site/Bolet-n-102-30a3fc8867ff801ab1f6f3fda581e4ab?source=copy_link",
         image: "/newsletter/Memoria_gorda_de_celular.jpg",
         allNewslettersUrl: "https://eduardoescritos.notion.site/Pastillitas-de-tecnolog-a-2c96916a4f714d4f8e1a1ccf0f4f50cd?source=copy_link"
     },
