@@ -38,16 +38,7 @@ export function UpcomingWorkshop({ workshop }: UpcomingWorkshopProps) {
 
                     <MotionWrapper className="space-y-6" delay={0.3}>
                         <div>
-                            <div className="flex items-center gap-2 text-primary mb-3">
-                                <Calendar className="w-5 h-5" />
-                                <span className="font-medium">
-                                    {new Date(workshop.date + "T00:00:00").toLocaleDateString("es-ES", {
-                                        day: "numeric",
-                                        month: "long",
-                                        year: "numeric",
-                                    })}
-                                </span>
-                            </div>
+
                             <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
                                 {workshop.title}
                             </h3>
