@@ -12,10 +12,10 @@ export const siteConfig = {
         notion: "https://www.notion.so/eduardoescritos/Pastillitas-de-tecnolog-a-2c96916a4f714d4f8e1a1ccf0f4f50cd",
     },
     latestNewsletter: {
-        title: "Boletín #102",
-        description: "La 9na estrategia para que nuestro celular no explote la memoria",
-        url: "https://eduardoescritos.notion.site/Bolet-n-102-30a3fc8867ff801ab1f6f3fda581e4ab?source=copy_link",
-        image: "/newsletter/Memoria_gorda_de_celular.jpg",
+        title: "Boletín #103",
+        description: "Búsqueda de información dentro de los chats de WhatsApp y para qué sirven las etiquetas o listas.",
+        url: "https://eduardoescritos.notion.site/Bolet-n-103-3123fc8867ff80af8e5efc9cb3642349?source=copy_link",
+        image: "/newsletter/busqueda_whastapp.jpg",
         allNewslettersUrl: "https://eduardoescritos.notion.site/Pastillitas-de-tecnolog-a-2c96916a4f714d4f8e1a1ccf0f4f50cd?source=copy_link"
     },
     url: "https://eduardo.net.ar",

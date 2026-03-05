@@ -12,10 +12,14 @@ type Post = {
   imageFit?: "cover" | "contain";
   tags: string[];
   readingTime: number;
+  externalLink?: string;
 };
 
 export function LatestPost({ post }: { post: Post }) {
   if (!post) return null;
+
+  const href = post.externalLink || `/blog/${post.slug}`;
+  const isExternal = !!post.externalLink;
 
   return (
     <section id="post" className="py-12 px-6 md:px-12 lg:px-24 scroll-mt-20">
@@ -26,7 +30,9 @@ export function LatestPost({ post }: { post: Post }) {
           </span>
 
           <Link
-            href={`/blog/${post.slug}`}
+            href={href}
+            target={isExternal ? "_blank" : undefined}
+            rel={isExternal ? "noopener noreferrer" : undefined}
             className="group block mt-4 rounded-2xl border overflow-hidden hover:border-primary/50 transition glass-card"
           >
             <div className="flex flex-col md:flex-row items-center">

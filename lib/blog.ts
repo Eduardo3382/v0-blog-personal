@@ -15,6 +15,7 @@ export type BlogPost = {
   wordCount: number;
   readingTime: number;
   tags: string[];
+  externalLink?: string;
 };
 
 function calculateReadingMetadata(content: string) {
@@ -52,6 +53,7 @@ export function getAllPosts(): BlogPost[] {
       wordCount,
       readingTime,
       tags,
+      externalLink: data.externalLink,
     };
   });
 

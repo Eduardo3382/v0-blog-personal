@@ -19,7 +19,7 @@ export const photos: Photo[] = [
         "alt": "Boletin # 99",
         "caption": "Boletin # 99",
         "note": "Cuenta la historia de tres personas longevas y tecnológicas.",
-        "date": "2026-02-06",
+        "date": "2026-02-27",
         "sortDate": "",
         "tags": []
     },
