@@ -12,9 +12,8 @@ const teachingItems = [
   },
   {
     icon: MapPin,
-    title: "Clases presenciales",
     description:
-      "Clases abiertas a todo público y edad todos lo viernes 1530 horas en Sociedad Friulana (Navarro 3974, Villa Devoto) ☎️ Informes: 4501-0764",
+      "Clases abiertas a todo público y edad todos lo viernes 1530 horas en Sociedad Friulana (Navarro 3974, Villa Devoto)",
   },
   {
     icon: BookOpen,
