@@ -14,7 +14,8 @@ import { UpcomingWorkshop } from "@/components/upcoming-workshop";
 import { LatestNewsletter } from "@/components/latest-newsletter";
 
 export default function Home() {
-  const posts = getAllPosts();
+  const allPosts = getAllPosts();
+  const posts = allPosts.filter(post => !post.tags.includes("boletín"));
   const latestPost = posts[0];
   const otherPosts = posts.slice(1, 4);
   const upcomingWorkshop = getUpcomingWorkshop();

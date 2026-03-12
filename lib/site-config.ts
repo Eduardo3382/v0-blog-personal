@@ -12,10 +12,10 @@ export const siteConfig = {
         notion: "https://www.notion.so/eduardoescritos/Pastillitas-de-tecnolog-a-2c96916a4f714d4f8e1a1ccf0f4f50cd",
     },
     latestNewsletter: {
-        title: "Boletín #103",
-        description: "Búsqueda de información dentro de los chats de WhatsApp y para qué sirven las etiquetas o listas.",
-        url: "https://eduardoescritos.notion.site/Bolet-n-103-3123fc8867ff80af8e5efc9cb3642349?source=copy_link",
-        image: "/newsletter/busqueda_whastapp.jpg",
+        title: "Boletín #104",
+        description: "El hashtag (#): su historia, qué es y su uso en redes sociales, correos y listas de WhatsApp.",
+        url: "https://eduardoescritos.notion.site/Bolet-n-104-31c3fc8867ff80309e13ce46b2b93aa7?source=copy_link",
+        image: "/newsletter/Boletin104_ImageMar_reducido.jpg",
         allNewslettersUrl: "https://eduardoescritos.notion.site/Pastillitas-de-tecnolog-a-2c96916a4f714d4f8e1a1ccf0f4f50cd?source=copy_link"
     },
     url: "https://eduardo.net.ar",
