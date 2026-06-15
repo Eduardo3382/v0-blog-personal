@@ -21,3 +21,19 @@ Para ayudarte con la gestión de tu blog, he organizado toda la información en 
 - **[Guía de Workshops](./documentacion/14-%20Guia%20workshops.md)**: Instrucciones detalladas para agregar nuevos eventos y gestionar inscripciones.
 - **[Guía de Fotos](./documentacion/15-%20Guia%20actualizacion%20fotos.md)**: Cómo actualizar la galería y procesar imágenes.
 - **[Recursos de Edición](./documentacion/)**: Una colección de guías sobre Git, edición local, dominios y más.
+
+# Dominio
+- Tramitado en https://nic.ar/
+- con ingreso en Trámites a Distancia
+# Desarrollado 
+Pagina_web_personal para desarrollar usando IA en  https://v0.app/eduardo3382
+
+# Alojado
+Donde esta alojada https://vercel.com/account/domains
+
+# Nombre de la Pagina:
+eduardo.net.ar
+
+# Google search consola
+Google search consola para monitorear el indexado 
+https://search.google.com/search-console/index/drilldown?resource_id=sc-domain%3Aeduardo.net.ar&item_key=CAMYCyAC&hl=es
